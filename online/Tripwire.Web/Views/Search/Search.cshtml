@@ -1,0 +1,88 @@
+﻿@model Tripwire.Domain.Search.SearchResults
+@{
+	ViewBag.Title = Resources.Main.SearchResults;
+    int total = (int)Math.Ceiling((double)Model.TotalCount / Model.PageSize);
+    int firstPage = Math.Max(1, Model.PageIndex - 5);
+    int lastPage = Math.Min(total, Model.PageIndex + 5);
+}
+
+<h1>@Resources.Main.SearchResults</h1>
+<div id="search-container" class="help-search-container">
+    @{if (ViewBag.APISearchTab)
+    {
+        <div class="ui-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                <li>
+                    <a href="@Url.Action("Search", "Search", new { query = ViewBag.Query, v = ViewBag.Version, page = Model.PageIndex, api = false })" id="topcis-search">
+                        @Resources.Main.Search_Topics (@(ViewBag.API ? ViewBag.SecondaryTabCount : Model.TotalCount ))
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Search", "Search", new { query = ViewBag.Query, v = ViewBag.Version, page = Model.PageIndex, api = true })">
+                        @ViewBag.APISearchTabName (@(!ViewBag.API ? ViewBag.SecondaryTabCount : Model.TotalCount))
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <script>
+            window.activeAPI = @Json.Encode(ViewBag.API);
+        </script>
+    }}
+
+    @foreach (var item in Model.Items)
+    {
+        <div class="search-element">
+            <h3>
+                <a href="@item.Link">@item.Title</a>
+            </h3>
+            <p>@(item.Content.Length <= 315 ? Html.Raw(item.Content) : Html.Raw(item.Content.Substring(0, 315) + "..."))</p>
+        </div>
+    }
+
+    @if (Model.Items.Count() == 0)
+    {
+        <div class="search-element">
+            <h3>
+                @Resources.Main.NoResults_Message
+            </h3>
+        </div>
+    }
+
+    <ul class="pagination pagination-md">
+        <li class="@(Model.PageIndex > 1 ? "" : "disabled")">
+            @if(Model.PageIndex > 1 ) {  
+                <a href="@Url.Action("Search", "Search", new { query = ViewBag.Query, v = ViewBag.Version, page = 1, api = ViewBag.API })">&laquo;</a>  
+            }
+            else
+            {
+                <span>&laquo;</span>
+            }                                                                                                                            
+        </li>
+        @for (int i = firstPage; i < lastPage + 1; i++)
+        {
+           
+            if (i != Model.PageIndex)
+            {
+                <li>
+                    <a data-page="@i" href="@Url.Action("Search", "Search", new { query = ViewBag.Query, v = ViewBag.Version, page = i, api = ViewBag.API })">@i</a>
+                </li>
+            }
+            else
+            {
+                <li class="active">
+                    <span>@i</span>
+                </li>
+            }
+        }
+        <li class="@(total > lastPage ? "" : "disabled")">
+            @if (total > lastPage)
+            {
+                <a href="@Url.Action("Search", "Search", new { query = ViewBag.Query, v = ViewBag.Version, page = total, api = ViewBag.API })">&raquo;</a>
+            }
+            else
+            {
+                <span>&raquo;</span>
+            }
+        </li>  
+    </ul>
+</div>

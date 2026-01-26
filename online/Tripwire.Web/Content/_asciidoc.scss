@@ -1,0 +1,51 @@
+﻿
+.admonitionblock {
+    margin: 20px 0 20px 0;
+    
+    .icon {
+        .title {
+            display: none;
+        }
+    }
+    
+    .content {
+        
+        .title {
+            font-weight: bold;
+        }
+        
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #ffc;
+    }
+}
+
+/* http://www.methods.co.nz/asciidoc/chunked/ch10.html 
+ "Where <color> can be any of the sixteen HTML color names."
+*/
+// colors must be quoted or else they may get converted to hex in compression output mode
+@each $color in ('aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'white', 'yellow') {
+  .#{$color} {
+    color: $color;
+  }
+  
+  .#{$color}-background {
+    background-color: $color;
+  }
+}
+
+@each $halign in (left, right, center) {
+  th.halign-#{$halign},
+  td.halign-#{$halign} {
+    text-align: $halign;
+  }
+}
+
+@each $valign in (top, bottom, middle) {
+  th.valign-#{$valign},
+  td.valign-#{$valign} {
+    vertical-align: $valign;
+  }
+}
+
+

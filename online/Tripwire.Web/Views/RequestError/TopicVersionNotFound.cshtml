@@ -1,0 +1,21 @@
+﻿@{
+	string topicTitle = ViewBag.Title;
+	ViewBag.Title = Resources.Main.Something_Happened;
+}
+<h1>@Resources.Main.Something_Happened</h1>
+
+<p class="lead">
+    @Resources.Main.UpVersion_Latest
+</p>
+<p>
+    @Resources.Main.UpVersion_Reason
+</p>
+<p>
+    @Html.Raw(Resources.Main.UpVersion_Note)
+</p>
+
+<h2 class="version-heading">@ViewBag.Latest |</h2>
+
+<h3 class="version-heading">
+	<a href="@Url.Content("~/" + ViewBag.ProductURL + "/" + ViewBag.PageName)">@topicTitle</a>
+</h3>

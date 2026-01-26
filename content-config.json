@@ -1,0 +1,35 @@
+{
+	"helpTopicsFolder": "t:\\<%= FolderName %>\\topics",
+	"docsConfigFilePath" : "t:\\DocsConfig.xml",
+	"tableOfContents" : {
+		"src": "t:\\<%= ProductName %>\\topics",
+		"dests": ["h:\\<%= ProductName %>\\<%= VersionNumber %>\\toc.json"],
+		"templates": [
+			{
+				"output": "html",
+				"src": "<%= RootFolder %>\\offline\\templates\\toc.html",
+				"dests": ["h:\\<%= ProductName %>\\<%= VersionNumber %>\\toc.html"],
+				"token": "||content||"
+			},
+			{
+				"output": "xml",
+				"src": "<%= RootFolder %>\\offline\\templates\\toc.xml",
+				"dests": ["h:\\<%= ProductName %>\\<%= VersionNumber %>\\toc.xml"],
+				"token": "||content||"
+			},
+			{
+				"output": "xml-toc",
+				"src": "<%= RootFolder %>\\offline\\templates\\chm.xml",
+				"dests": ["h:\\<%= ProductName %>\\<%= VersionNumber %>\\chm.xml"],
+				"token": "||content||"
+			}
+		],
+		"replaceFileExt": "",
+		"toLowerCase": "true",
+		"helpRootUrl": "<%= HelpRootUrl %>",
+		"stripTitleBrackets": "true"
+	},
+	"topics": {
+		"dest": "h:\\<%= ProductName %>\\<%= VersionNumber %>"
+	}
+}

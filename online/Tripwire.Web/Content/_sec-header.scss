@@ -1,0 +1,199 @@
+﻿/* minimal clone of the secondary styles*/
+.clearfix:after
+{
+	content : "";
+	display : table;
+	clear   : both;
+}
+.igw-main-header, .igw-main-header-reveal {
+    transition: all 225ms;
+    position: fixed;
+    z-index: 100002;
+    width: 100%;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: $sec-header-bg;
+    border-bottom: 1px solid #666;
+    height: 53px;
+    box-sizing: border-box;
+}
+.igw-main-header-reveal {
+    background: #414141;
+}
+
+.igw-wrapper {
+    margin: 0 auto;
+}
+.igw-nav-wrapper {
+    float: right;
+    margin: 10px 0;
+}
+.igw-main-nav {
+    height: 52px;
+    position: relative;
+}
+
+.ui-footer
+{
+	z-index : 100002 !important;
+	position:relative;
+}
+
+#header {
+	z-index : 100003;
+}
+
+
+
+.special-for-controls
+{
+	float : left;
+	font-size         : 18px;
+	font-weight       : 500;
+	padding-top       : 2px;
+	position          : absolute;
+	top               : 50%;
+	left              : 0;
+	transform         : translateY(-50%);
+	margin            : 0 !important;
+}
+
+.special-for-controls a
+{
+	color : #fff;
+}
+
+.special-for-controls span
+{
+	color       : #777;
+	font-weight : 500;
+}
+/* Vader's Former Handle.. */
+.igw-header-nav a:visited,
+.special-for-controls a:visited
+{
+	color: #fff;
+}
+
+.igw-header-nav a:focus,
+.special-for-controls a:focus
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.igw-header-nav a:hover, .igw-header-nav a.active,
+.special-for-controls a:hover
+{
+	color : #09f;
+	text-decoration: none;
+}
+
+.igw-header-nav li:last-of-type a
+{
+	padding-left : 14px;
+}
+
+.igw-header-nav li
+{
+	display : inline-block;
+}
+
+.igw-header-nav a
+{
+	color       : #fff;
+	font-size   : 12px;
+	font-weight : 500;
+	margin-top  : 1px;
+	display     : block;
+	position    : relative;
+	padding     : 7px 14px 6px 0;
+}
+
+.igw-header-nav li
+{
+	display     : inline;
+	color       : #fff;
+	float       : left;
+	line-height : 16px;
+}
+
+.igw-header-nav
+{
+	float           : left;
+	list-style-type : none;
+}
+
+.igw-btn, .igw-btn-reveal
+{
+	background         : #09f;
+	border             : 1px solid transparent;
+	border-radius      : 0;
+	margin-top         : -1px;
+	padding            : 12px 16px;
+	text-transform     : uppercase;
+	transition         : all 600ms;
+}
+
+.igw-btn-reveal {
+    background: #ec417a;
+    border-radius: 55px;
+}
+
+.igw-header-btn:hover
+{
+	background   : transparent;
+	border-color : #09f;
+}
+
+.igw-header-btn.igw-btn-reveal:hover {
+    background: transparent;
+    border-color: #ec417a;
+    color: #ec417a;
+}
+
+@media screen and (max-width : 1279px)
+{
+	.igw-wrapper
+	{
+		max-width : 960px;
+		margin    : 0 auto;
+	}
+
+	.special-for-controls
+	{
+		left : 2%;
+	}
+}
+
+@media screen and (max-width : 960px)
+{
+    .igw-main-header, igw-main-header-reveal {
+        position:static!important;
+    }
+
+	.igw-mobile-hidden
+	{
+		display : none !important;
+	}
+
+	.igw-wrapper
+	{
+		max-width  : 840px;
+		margin     : 0 auto;
+	}
+
+	.container.main {
+		margin-top: 0!important;
+	}
+}
+
+@media screen and (max-width : 480px)
+{
+	.igw-wrapper
+	{
+		max-width : 100%;
+		margin    : 0 auto;
+	}
+}

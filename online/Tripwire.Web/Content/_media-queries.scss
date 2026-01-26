@@ -1,0 +1,125 @@
+/* media queries */
+
+@media (max-width: 768px) {
+
+    .inner-container {
+        min-height: none;
+    }
+
+    #toc-tree { 
+        transition: 0.5s;
+    }
+
+    #document-content {
+
+        & h1 {
+            font-size: 2em;
+        }
+
+        & h2 {
+            font-size: 1.5em; 
+            line-height: normal;
+        }        
+    }
+
+    .main-logo {
+        max-width: 100%;
+    }
+
+    .nav-sidebar {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    } 
+
+    #nav-container {
+        margin-bottom: 20px;
+    }
+
+    #nav-button {
+        max-width: 60%;
+        background-color: $highlighter-light;
+        border: darken($highlighter-light, 20%);
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 1px 1px rgba(0,0,0,0.4);
+        border-radius: 0;
+        margin: 0 auto;
+        height: auto;
+        line-height: 40px;
+    }
+
+    #document-content pre code {
+        min-width: 500px;
+    }
+
+    #document-content pre {
+        overflow: auto;
+    }
+
+    .version-selector-wrap {
+        margin-left: 20px;
+        float: none;
+    }
+
+}
+
+@media (min-width: 992px) {
+	.nav-sidebar{
+		min-height: 800px;
+	}
+    #error-published-message {
+        position: fixed;
+        width: auto;
+        left: 50%;
+        margin: 0 auto;
+        color: #FFF;
+        text-align: center;
+        border-radius: 0;
+        background-color: $highlighter-light;
+        border-color: darken($highlighter-light, 20%);
+
+        & span {
+            color: #fff!important; /* bootstrap */
+            opacity: 1;
+        }
+    }
+
+    #toc-tree-loader {
+        margin:25px;
+        height: 25px;
+        width:25px;
+        background-image:url(../img/loader.gif);
+        background-repeat:no-repeat;
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .inner-container {
+        width: 100%;
+    }
+
+	#nav-container.affix {
+		min-width: 150px;
+	}
+
+    #top-button {
+        bottom: 2px;
+        right: 18px;
+    }
+}
+
+@media print {
+    .nav-sidebar,
+    #menubar .form-inline,
+    .version-selector-wrap,
+    .footerIcon,
+    #top-button,
+    .footerNav {
+        display: none;
+    }
+
+    .header-icon a[href]:after {
+        content: none !important;
+    } 
+}

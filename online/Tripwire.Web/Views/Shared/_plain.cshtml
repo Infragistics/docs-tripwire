@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="@Url.Content("~/")" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="@Url.Content("~/img/favicon.ico")" />
+    <title>@ViewBag.Title - Ignite UI™ Help</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body data-mode="online">
+    <header>
+        <div class="header-icon">
+            <h1 class="sr-only">Ignite UI</h1>
+            <a href="@Url.Content("~/home-page")"><img src="@Url.Content("~/img/igniteui-trans.png")" class="img-responsive" width="400" height="91">></a>
+        </div>
+    </header>
+    <div class="container main">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                
+            </div>
+            <div id="document-content" class="col-sm-8 col-md-8">
+                @RenderBody()
+            </div>
+            <div id="top-button" class="top-button"><button class="btn btn-sm"></button></div>
+        </div>
+    </div>
+    <footer class="footerArea text-center">
+        <div class="footerIcon">
+            <a href="http://www.infragistics.com">
+                <img src="@Url.Content("~/img/infragistics.png")" class="img-responsive" width="250" height="39">
+            ></a>
+        </div>
+        <nav class="footerNav">
+            <a href="http://www.infragistics.com/legal/license/">LICENSE AGREEMENT</a>|
+            <a href="http://www.infragistics.com/about-us/contact-us/">CONTACT US</a>|
+            <a href="http://www.infragistics.com/help/">GET HELP</a>|
+            <a href="http://www.infragistics.com/about-us/">MEET US</a>|
+            <a href="http://www.infragistics.com/legal/privacy/">PRIVACY AGREEMENT</a>|
+            <a href="http://www.infragistics.com/sitemap/">SITE MAP</a>|
+            <a href="http://www.infragistics.com/legal/information/">LEGAL INFORMATION</a>
+        </nav>
+    </footer>
+
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

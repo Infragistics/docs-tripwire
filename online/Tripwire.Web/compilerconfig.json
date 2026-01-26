@@ -1,0 +1,12 @@
+﻿[
+  {
+    "outputFile": "Content/multiplatform.css",
+    "inputFile": "Content/multiplatform.scss",
+    "options":{
+      "sourceMap": true,
+      "lineFeed": "crlf",
+      "outputStyle": "expanded",
+      "autoPrefix":  "defaults"
+    }
+  }
+]

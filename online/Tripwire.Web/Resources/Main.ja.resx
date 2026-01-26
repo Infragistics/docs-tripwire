@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>お問い合わせ</value>
+  </data>
+  <data name="Contact_UsURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/about-us/contact-us</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="Download_Trial" xml:space="preserve">
+    <value>トライアル版をダウンロード</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>メール</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="Error_404_Message" xml:space="preserve">
+    <value>要求したページが見つかりませんでした。</value>
+  </data>
+  <data name="Error_404_Page_Title" xml:space="preserve">
+    <value>ページが見つかりません</value>
+  </data>
+  <data name="Error_500_Message" xml:space="preserve">
+    <value>サーバーでエラーが発生しました。</value>
+  </data>
+  <data name="Error_500_Page_Title" xml:space="preserve">
+    <value>サーバー エラー</value>
+  </data>
+  <data name="Error_Common_Format" xml:space="preserve">
+    <value>目次を参照または検索を実行、あるいは&lt;a href="{0}"&gt;ホーム ページ&lt;/a&gt;へお戻りください。</value>
+  </data>
+  <data name="Error_Message" xml:space="preserve">
+    <value>要求の処理でエラーが発生しました。</value>
+  </data>
+  <data name="Error_NoJS_Message" xml:space="preserve">
+    <value>このサイトで JavaScript が必要です。</value>
+  </data>
+  <data name="Error_NoSuchVersion" xml:space="preserve">
+    <value>要求したバージョンは利用できません。ヘルプの最新バージョンにリダイレクトしました。</value>
+  </data>
+  <data name="Error_OnPage_Message" xml:space="preserve">
+    <value>このページでエラーが発生しました。サーバーに情報を送信しました。</value>
+  </data>
+  <data name="FeedbackEmail" xml:space="preserve">
+    <value>JapanHelpFeedback@infragistics.com</value>
+  </data>
+  <data name="Feedback_Format" xml:space="preserve">
+    <value>このトピックについてのご意見・ご感想を{0}にてお寄せください。</value>
+    <comment>from old docs</comment>
+  </data>
+  <data name="Get_Help" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="Get_HelpURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/support</value>
+  </data>
+  <data name="Help_Topics" xml:space="preserve">
+    <value>ヘルプ トピック</value>
+  </data>
+  <data name="IG_Website" xml:space="preserve">
+    <value>http://jp.infragistics.com</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="Legal_Information" xml:space="preserve">
+    <value>著作権および商標</value>
+    <comment>from samples</comment>
+  </data>
+  <data name="Legal_InformationURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/legal/information</value>
+    <comment>from samples</comment>
+  </data>
+  <data name="License_Agreement" xml:space="preserve">
+    <value>使用許諾契約</value>
+  </data>
+  <data name="License_AgreementURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/legal/license</value>
+  </data>
+  <data name="Meet_Us" xml:space="preserve">
+    <value>会社概要</value>
+  </data>
+  <data name="Meet_UsURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/about-us/company-information</value>
+  </data>
+  <data name="NavHide_Label" xml:space="preserve">
+    <value>ナビゲーションを非表示</value>
+  </data>
+  <data name="NavShow_Label" xml:space="preserve">
+    <value>ナビゲーションを表示</value>
+  </data>
+  <data name="NoResults_Message" xml:space="preserve">
+    <value>検索結果は見つかりませんでした。</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="Privacy_Agreement" xml:space="preserve">
+    <value>プライバシー ポリシー</value>
+  </data>
+  <data name="Privacy_AgreementURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/legal/privacy</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="SearchAPICollection_Format" xml:space="preserve">
+    <value>{0}/apiCollectionJa</value>
+  </data>
+  <data name="SearchCollection_Format" xml:space="preserve">
+    <value>{0}/collectionJa</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>検索結果</value>
+  </data>
+  <data name="Search_Topics" xml:space="preserve">
+    <value>トピック</value>
+  </data>
+  <data name="Site_Map" xml:space="preserve">
+    <value>製品ラインアップ</value>
+    <comment>from samples; "Changed to "product lineup" because we don't have a site map."</comment>
+  </data>
+  <data name="Site_MapURL" xml:space="preserve">
+    <value>http://jp.infragistics.com/products</value>
+  </data>
+  <data name="Something_Happened" xml:space="preserve">
+    <value>エラーが発生しました。</value>
+  </data>
+  <data name="UpVersion_Latest" xml:space="preserve">
+    <value>選択したトピックは、ヘルプの最新バージョンでのみ利用可能です。以前のバージョンはありません。</value>
+  </data>
+  <data name="UpVersion_Note" xml:space="preserve">
+    <value>&lt;strong&gt;注&lt;/strong&gt;: 以下のリンクをクリックすると、以前選択したバージョンより後のヘルプ バージョンが表示されます。</value>
+  </data>
+  <data name="UpVersion_Reason" xml:space="preserve">
+    <value>検索またはヘルプの以前のバージョンから新しいトピックを表示するためにこのページへ移動しました。</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>バージョン</value>
+  </data>
+  <data name="View_on" xml:space="preserve">
+    <value>オンラインで表示:</value>
+  </data>
+</root>

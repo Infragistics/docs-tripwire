@@ -1,0 +1,34 @@
+﻿@{
+    string path = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+    string culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+
+    string url = "CanonicalUrl is NULL";
+
+    if (ViewData["CanonicalUrl"] != null)
+    {
+        url = ViewData["CanonicalUrl"].ToString();
+    }
+
+    string tryText = "Try it now";
+
+    string revealUrl = "http://www.revealbi.io";
+    if (culture == "ja")
+    {
+        revealUrl = revealUrl + "/jp";
+        tryText = "WEB版を今すぐ試す";
+    }
+}
+
+@* NOTE: Make sure placeholder content has .stuck on the first section element, otherwise it'll jump while loading *@
+
+<div id="header" class="globalnav" data-nav-auto-init="false" data-nav-theme="reveal">
+  <section id="header-wrap" class="globalnav__container stuck"><!-- Primary Nav -->
+    <section class="globalnav__primary clearfix">
+      <div class="globalnav__wrapper"><!-- Brand -->
+        <div class="globalnav__brand"><a href="@revealUrl"> <img class="globalnav__logo" src="https://static.infragistics.com/marketing/reveal/business-teams-reveal-logo-black.svg" alt="Reveal Logo" /> </a></div>
+        <!-- Menu -->
+        <div class="igw-header-nav"><a class="igw-header-btn igw-btn-reveal" href="https://app.revealbi.io"> <span>@tryText</span> </a></div>
+      </div>
+    </section>
+  </section>
+</div>

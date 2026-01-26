@@ -1,0 +1,164 @@
+﻿/****
+Footer
+****/
+.ui-footer {
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  font-family: "aktiv-grotesk",sans-serif;
+  line-height: 1.5em;
+  padding: 50px 0;
+}
+.ui-footer--clearfix:before,
+.ui-footer--clearfix:after {
+  content: '';
+  display: table;
+}
+.ui-footer--clearfix:after {clear:both;}
+
+.ui-footer--glow {
+  position: relative;
+}
+.ui-footer--glow:before,
+.ui-footer--glow:after {
+  background: rgba(0,153,256,1);
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 5;
+}
+.ui-footer--glow:before {
+  background: rgba(0,153,256,0.7);
+  width: 100%; height: 1px;
+  box-shadow: 0px 0px 13px 3px rgba(70,179,252,0.5);
+  top: 0; right: 0;
+}
+.ui-footer--glow:after {
+  background: rgba(0,153,256,1);
+  border-radius: 50%;
+  width: 25%; max-width: 155px; height: 1px;
+  box-shadow: 0 0 10px 6px rgba(0,153,255,0.75);
+  -webkit-transform: scaleX(1.5);
+  -ms-transform: scaleX(1.5);
+  transform: scaleX(1.5);
+  top: 0; right: 10%;
+}
+
+.ui-footer__wrap {
+  max-width: 1170px; margin: 0 auto;
+  position: relative; z-index: 2;
+}
+.ui-footer__wrap--max-width {max-width: 800px;}
+.ui-footer .ui-footer__menu ul {
+  list-style: none;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+.ui-footer .ui-footer__menu ul li {
+  position: relative;
+  margin-bottom: 0;
+}
+.ui-footer .ui-footer__menu ul li ul {
+  margin-top: 1px;
+  margin-bottom: 1px!important;
+}
+.ui-footer .ui-footer__menu ul li ul:last-child {
+  margin-bottom: 20px!important;
+}
+.ui-footer .ui-footer__menu a, .ui-footer .ui-footer__menu a:active,
+.ui-footer .ui-footer__category {
+  display: block;
+  font-size: 14px;
+  padding-top: 0.5em;
+  /*padding-bottom: 0.5em;*/
+  text-decoration: none;
+}
+.ui-footer .ui-footer__category {color: #fcfcfc; font-weight: bold; position: relative;}
+.ui-footer .ui-footer__menu a {color: #a7a7a7;}
+.ui-footer .ui-footer__menu a:hover {color: #0099ff;}
+
+.ui-footer__col-one-fourth {width: 21.25%;}
+.ui-footer__col-one-fifth {width: 15%;}
+.ui-footer__col-one-fourth:last-child .ui-footer__menu-list ul {
+  /*columns: 2;
+  column-gap: 10px;
+  column-fill: balance;*/
+}
+
+
+.ui-footer__col-block {
+  float: left;
+  margin-left: 5%; margin-bottom: 60px;
+}
+.ui-footer__col-block.ui-footer__col-one-fourth {margin-bottom: 15px;}
+.ui-footer .ui-footer__col-one-fourth:first-child,
+.ui-footer .ui-footer__col-one-fifth:first-child {margin-left:0;}
+.ui-footer .ui-footer__wrap:last-child .ui-footer__col-block {margin-bottom:0;}
+
+.ui-footer__icons {margin-bottom: 30px;text-align: center;}
+.ui-footer .ui-footer__icon-link {
+  color: #666;
+  display: inline-block;
+  font-size: 22px;
+  fill: #666;
+  line-height: 30px;
+  margin-right: 20px;
+  position: relative;
+  text-align: center;
+  width: 40px; height: 40px;
+}
+.ui-footer__icon-link:hover {color: #0099ff; fill: #0099ff;}
+
+.ui-footer.ui-footer--ignite {padding: 50px 0 0;}
+.ui-footer #footer-wrap {
+  background: #000;
+  color: #868686;
+  font-size: 14px;
+  margin-top: 50px;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.ui-footer--legal a {font-size: 0.8em !important;}
+.ui-footer--legal li {display: inline-block;}
+
+#footer {
+  background: #000;
+  color: #868686;
+  font-family: "aktiv-grotesque", "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+#footer #footer-wrap {
+  padding: 25px 10px;
+}
+#footer #copyright {
+  color: #868686;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 960px) {
+  .ui-footer__wrap {max-width: 980px; margin: 0 auto;}
+  .ui-footer__icons {margin-bottom: 40px;}
+}
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  .ui-footer__wrap {max-width: 740px;  margin: 0 auto;}
+  .ui-footer__icons {margin-bottom: 40px;}
+}
+@media only screen and (max-width: 767px) {
+  .ui-footer__wrap {max-width: 300px;  margin: 0 auto;}
+  .ui-footer__col-block  {float: none; margin-left: 0; width: 100%;}
+  .ui-footer__icons {margin-bottom: 40px;}
+}
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  .ui-footer__wrap {max-width: 440px;  margin: 0 auto;}
+  .ui-footer__col-block {
+    display: inline-block;
+    float: none;
+    margin-left: 1%;
+    vertical-align: top;
+    width: 48%;
+  }
+  .ui-footer__icons {margin-bottom: 40px;}
+}

@@ -1,0 +1,367 @@
+﻿@using Tripwire.Web
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="@BundleTable.Bundles.ResolveBundleUrl(BundleVirtualPaths.Script_Redirects)" type="text/javascript"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="@Url.Content(ViewBag.ProductFamilyName == "Reveal" ? "/assets/reveal/icons/favicon.ico" : "/assets/favicon/favicon.ico")" />
+    <!-- New font -->
+    <script src="https://use.typekit.net/hgp6gkf.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
+    <title>@string.Format(ViewBag.PageTitle_Format, ViewBag.Title)</title>
+
+    @{
+        string culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+    }
+
+    @if (ViewData["MetaKeywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["MetaKeywords"].ToString()" />
+    }
+
+    @if (ViewData["MetaDescription"] != null)
+    {
+        <meta name="description" content="@ViewData["MetaDescription"].ToString()" />
+    }
+
+    @if (ViewData["CanonicalUrl"] != null)
+    {
+        <link rel="canonical" href="@ViewData["CanonicalUrl"].ToString()" />
+
+        string canonicalUrl = ViewData["CanonicalUrl"].ToString();
+
+        //These replaces are only set up for the production site. Will not be right on dev/staging, but they aren't needed there.
+        if (canonicalUrl.Contains(".co.kr"))
+        {
+            <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ko-kr" />
+        }
+        else if (culture.Contains("ja"))
+        {
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko-kr" />
+        }
+        else if (culture.Contains("en"))
+        {
+            <link rel="alternate" href="@canonicalUrl" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko-kr" />
+        }
+
+        @*if (canonicalUrl.Contains("www."))
+            {
+                <link rel="alternate" href="@canonicalUrl" hreflang="en" />
+                <link rel="alternate" href="@canonicalUrl" hreflang="en-us" />
+                <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja" />
+                <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja-jp" />
+                <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko" />
+                <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko-kr" />
+            }
+            else if (canonicalUrl.Contains("jp."))
+            {
+                <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en" />
+                <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en-us" />
+                <link rel="alternate" href="@canonicalUrl" hreflang="ja" />
+                <link rel="alternate" href="@canonicalUrl" hreflang="ja-jp" />
+                <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko" />
+                <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko-kr" />
+            }
+            else if (canonicalUrl.Contains(".co.kr"))
+            {
+                <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en" />
+                <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en-us" />
+                <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja" />
+                <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja-jp" />
+                <link rel="alternate" href="@canonicalUrl" hreflang="ko" />
+                <link rel="alternate" href="@canonicalUrl" hreflang="ko-kr" />
+            }*@
+        <link rel="alternate" href="@ViewData["CanonicalUrl"].ToString()" hreflang="x-default" />
+    }
+
+    @{
+        string gtmEnvAuthId = "";
+        string gtmEnvId = "";
+
+        string path = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+        //string culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+
+        string familyName = ViewBag.ProductFamilyName;
+
+        bool isDev = false;
+        bool isStaging = false;
+
+        if (ViewData["CanonicalUrl"] != null)
+        {
+            string canonical = ViewData["CanonicalUrl"].ToString();
+
+            if (canonical.Contains("dev."))
+            {
+                isDev = true;
+            }
+            else if (canonical.Contains("staging."))
+            {
+                isStaging = true;
+            }
+        }
+
+
+        if (familyName == "Reveal")
+        {
+            if (isDev)
+            {
+                gtmEnvAuthId = "W_SrvcqdkxyARq6Eze9-0w";
+                gtmEnvId = "env-31";
+            }
+            else if (isStaging)
+            {
+                gtmEnvAuthId = "KOzs4RxtHF6W3Qah0V48Og";
+                gtmEnvId = "env-32";
+            }
+            else
+            {
+                gtmEnvAuthId = "QRsZKCcqoVSZxj4pUVdxiA";
+                gtmEnvId = "env-33";
+            }
+        }
+        else
+        {
+            if (culture == "ja")
+            {
+                if (isDev)
+                {
+                    gtmEnvAuthId = "7ridz9S5a1MHClCz-mtIBw";
+                    gtmEnvId = "env-9";
+                }
+                else if (isStaging)
+                {
+                    gtmEnvAuthId = "I2WOyfC8mQ7i5bdJp-Apuw";
+                    gtmEnvId = "env-10";
+                }
+                else
+                {
+                    gtmEnvAuthId = "1UO1fmpbS-SKMrpbxa2IXQ";
+                    gtmEnvId = "env-11";
+                }
+            }
+            else
+            {
+                if (isDev)
+                {
+                    gtmEnvAuthId = "6-Wu0zZasVUkOQ4osTMnEQ";
+                    gtmEnvId = "env-5";
+                }
+                else if (isStaging)
+                {
+                    gtmEnvAuthId = "jTk8rYAR4_uN0bOowlBXEA";
+                    gtmEnvId = "env-6";
+                }
+                else
+                {
+                    gtmEnvAuthId = "Q-Dwk20iy37unMfGosJdSA";
+                    gtmEnvId = "env-8";
+                }
+            }
+        }
+    }
+
+    @Html.Partial("_HeaderStyles")
+    @if (ViewBag.ProductFamilyName == "IgniteUI")
+    {
+        @Styles.Render(BundleVirtualPaths.Style_IgniteUI)
+    }
+    else
+    {
+        @Styles.Render(BundleVirtualPaths.Style_Multiproduct)
+    }
+    @Scripts.Render(BundleVirtualPaths.Script_Modernizr)
+
+    <!--[if lt IE 9]>
+
+            <style>
+
+                .col-sm-3 { width: 25%; }
+        .col-sm-4 {  width: 33.33333333%; }
+        .col-sm-8 { width: 66.66666667%; }
+        .col-sm-9 { width: 75%; }
+        .col-sm-3, .col-sm-4, .col-sm-8, .col-sm-9 { float:left; }
+    </style>
+    <![endif]-->
+
+    <script>
+        var errorUrl = "@Url.RouteUrl(new { httproute = "", controller = "error" })";
+        window.baseURI = "@Url.Content("~/" + ViewBag.Product + "/")"; window.onerror = function (e, t, n) { var r = "errorText=" + e + "&url=" + t + "&lineNumber=" + n; var i; if (typeof XMLHttpRequest !== "undefined") { i = new XMLHttpRequest } else { var s = ["MSXML2.XmlHttp.5.0", "MSXML2.XmlHttp.4.0", "MSXML2.XmlHttp.3.0", "MSXML2.XmlHttp.2.0", "Microsoft.XmlHttp"]; for (var o = 0, u = s.length; o < u; o++) { try { i = new ActiveXObject(s[o]); break } catch (a) { } } } i.open("POST", errorUrl, true); i.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); i.send(r) };
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=@gtmEnvAuthId&gtm_preview=@gtmEnvId&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KLZN327');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'trackSPAPageview',
+            'pagePath': location.pathname,
+            'pageTitle': document.title
+        });
+        // End Google Tag Manager
+    </script>
+</head>
+<body data-mode="online" data-versions="@ViewBag.PublishedVersions" class="sticky-header @(String.IsNullOrEmpty(ViewBag.ProductFamilyName) ? "" : ViewBag.ProductFamilyName.ToLower())" data-product-list="@ViewBag.ProductList" data-subproduct-list="@ViewBag.SubProductList">
+    @Html.Partial(ViewBag.ProductFamilyName == "Reveal" ? "_HeaderReveal" : "_Header")
+    @Html.Partial(ViewBag.ProductFamilyName == "IgniteUI" ? "_HeaderSecIgnite" : (ViewBag.ProductFamilyName == "Reveal" ? "_HeaderSecReveal" : "_HeaderSecondary"))
+
+    <!-- Google Tag Manager No Script -->
+    <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLZN327&gtm_auth=@gtmEnvAuthId&gtm_preview=@gtmEnvId&gtm_cookies_win=x"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager No Script -->
+
+    <div class="scrollable-container">
+        <div class="container main">
+            <div class="row inner-container">
+                <div class="col-sm-3 col-md-3 nav-sidebar">
+                    <div id="nav-container" class="collapse in affix">
+                        <!-- Nav tabs -->
+                        <div id="menubar" class="row help-search-holder">
+                            @using (Html.BeginForm("Search", "Search", new { v = ViewBag.Version, subProduct = ViewBag.SubProduct }, FormMethod.Get, new { @class = "clearfix form-inline" }))
+                            {
+                                <div class="form-group">
+                                    <div class="relative">
+                                        <label for="query" class="sr-only">@Resources.Main.Search</label>
+                                        <input id="query" name="query" type="text" placeholder="@Resources.Main.Search" class="form-control" value="@ViewBag.Query" />
+                                        <button id="searchButton" value="@Resources.Main.Search" type="submit" class="btn btn-default">
+                                            <span class="ui-icon ui-icon-search"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div id="toc-tree" class="row"></div>
+                        <div id="toc-tree-loader"></div>
+
+                        <script type="text/javascript">
+                            document.getElementById("toc-tree").style.display = "none";
+                        </script>
+                    </div>
+                    <button id="nav-button" class="btn btn-default form-control ui-visible-phone">@Resources.Main.NavShow_Label</button>
+                </div>
+                <div class="col-sm-9 col-md-9 top-level-content-wrap">
+                    <noscript>
+                        <div class="alert alert-danger alert-dismissible">
+                            @Resources.Main.Error_NoJS_Message
+                        </div>
+                    </noscript>
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-info " id="wrong-version">
+                            @TempData["Message"]
+                        </div>
+                    }
+
+                    <div class="version-selector-wrap">
+
+                        <div id="version-selector">
+                            <div id="version-selector-label">
+                                @Resources.Main.Version
+                                <span id="version-selector-current-label"></span>
+                            </div>
+                            <div id="selector-combo" class="none"></div>
+                        </div>
+                    </div>
+
+                    <div id="feedback-container">
+                        <div class="feedback-title">Is this content useful?</div>
+                        <div class="feedback-ratings">
+                            <span class="feedback-rating" data-value="true"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></span>
+                            <span class="feedback-rating" data-value="false"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></span>
+                        </div>
+                        <div id="feedback-rating-sent-message" class="feedback-rating-message">Thank you for your feedback!</div>
+                        <div id="feedback-rating-message" class="feedback-rating-message">Thank you for your feedback! You have rated this topic in the last 30 days.</div>
+                        <div class="feedback-comment-container">
+                            <textarea name="feedback-textbox" id="feedback-textbox" class="form-control" cols="24" rows="10" placeholder="(comments are optional)"></textarea>
+                            <div class="text-right">
+                                <button id="feedback-button-cancel" class="btn btn-link btn-xs"></button>
+                                <button id="feedback-button" class="btn btn-default btn-xs">Send Feedback</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="document-content-container">
+                        @RenderBody()
+                    </div>
+                    <div id="fine-print" class="text-muted">
+                        <p @if (ViewBag.ExtraFinePrint != true) { @: hidden
+                           }>
+                            @if (ViewBag.ProductFamilyName == "IgniteUI")
+                            {
+                                @Resources.Main.View_on <a href="@Resources.IgniteUI.GitHub_link" target="_blank" class="github-link">GitHub</a>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <div id="top-button" class="top-button">
+                    <button class="btn btn-sm"></button>
+                </div>
+            </div>
+        </div>
+        @Html.Partial(ViewBag.ProductFamilyName == "Reveal" ? "_FooterReveal" : "_Footer")
+    </div>
+
+    <div class="alert alert-danger alert-dismissible none" role="alert" id="error-published-message">
+        <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">@Resources.Main.Close</span></button>
+        @Resources.Main.Error_OnPage_Message
+    </div>
+
+    @Scripts.Render(BundleVirtualPaths.Script_Default)
+    @{
+        string main = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+        string stripUrls = System.Configuration.ConfigurationManager.AppSettings["StripSearchResultUrls"];
+        if (!string.IsNullOrEmpty(stripUrls) && bool.Parse(stripUrls) && ViewBag.ProductFamilyName == "IgniteUI")
+        {
+            <script type="text/javascript" src="@Url.Content("~/Scripts/app/staging.ignite.apiLinkFilter.js")"></script>
+        }
+    }
+    <script type="text/javascript" src="@main/assets/modern/scripts/plugins.nav.js"></script>
+    <script type="text/javascript" src="@main/assets/modern/scripts/navigation.js"></script>
+
+    @* TODO: Add globalization config transform and make bundler take localized locale file on init instead
+        Possibly like http://stackoverflow.com/questions/10978979/a-localized-scriptbundle-solution
+    *@
+    <script>
+		@* RouteUrl doesn't require RouteName and setting httproute = "" allows for proper API link.
+		Will work with product == "" and will go for the DefaultApi route instead
+		*@
+		igViewer.common.topicAPI = "@Url.RouteUrl(new { httproute = "", controller = "topic", product = ViewBag.Product, v = ViewBag.Version })/";
+		@if (ViewBag.ProductFamilyName == "IgniteUI")
+		{
+			@: igViewer.common.igniteRootUrl = "@System.Configuration.ConfigurationManager.AppSettings["IgniteRootUrl"]";
+		}
+		igViewer.common.igRootUrl = "@System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"]";
+		igViewer.locale.noResults = "@Resources.Main.NoResults_Message";
+		igViewer.locale.latestLabel = "@Resources.Main.Latest";
+		igViewer.locale.pageTitleFormat = "@ViewBag.PageTitle_Format";
+		igViewer.locale.navShowLabel = "@Resources.Main.NavShow_Label";
+		igViewer.locale.navHideLabel = "@Resources.Main.NavHide_Label";
+
+		igViewer.feedbackService.culture = "@(culture == "ja" ? "jp" : "en")";
+		setTimeout(function () {
+			igViewer.feedbackService.init(igViewer.versionSelector.getLatestVersion());
+		}, 500);
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

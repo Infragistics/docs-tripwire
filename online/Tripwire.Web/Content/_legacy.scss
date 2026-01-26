@@ -1,0 +1,115 @@
+﻿#AfterHeaderContent, .PopupContent {
+    display:none;
+}
+#HeaderContent{
+    margin-top:25px;
+    
+    #PageTitleText {
+        font-size:1.75em;
+        font-weight: bold;
+        color: $highlighter-light;
+    }
+}
+#HeaderContent, .BreadcrumbsContainer, #BodyContent, #FooterContent {
+    background:#fff;
+    overflow: auto;
+    padding: 0 10px;
+}
+
+.SectionHeadingText {
+    display:block;
+    font-size:1.4em;
+    font-weight:bold;
+    margin:0;
+    margin-top:1em;
+    margin-bottom:0.25em;
+    padding:0;
+}
+
+.SectionHeadingIcon {
+    display:none;
+}
+
+.TabContainer ul {
+    display:block;
+    list-style:none;
+    margin:0 0 10px 0;
+    padding:0;
+    padding-top:10px;
+    border-bottom:1px solid #ccc;
+
+    & li:before {
+        display: none;
+    }
+}
+
+    .TabContainer ul li {
+        display:inline;
+    }
+
+.FilteredContentVBAll > a, 
+.FilteredContentCS > a {
+    border:1px solid #ccc;
+    background-color:#fff;
+    border-bottom:0;
+    border-radius:3px 3px 0 0;
+    margin:0 4px 0 4px;
+    padding:2px 8px 1px 8px;
+    z-index:100;
+}
+
+    .FilteredContentVBAll a:hover,
+    .FilteredContentCS a:hover {
+        text-decoration:none;
+    }
+
+.FilteredContentVBAll {
+    padding:0;
+}
+
+.FilteredContentVBAll a {
+    color:#ccc;
+    background-color:transparent;
+}
+
+.FilteredContentVB {
+    display:none;
+}
+/* Old tables */
+.FilteredItemListTable {
+    width: 100%;
+    >thead>tr>th, >tbody>tr>th, >tfoot>tr>th, >thead>tr>td, >tbody>tr>td, >tfoot>tr>td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+    }
+
+    >tbody>tr:nth-child(odd)>td, >tbody>tr:nth-child(odd)>th {
+        background-color: #f9f9f9;
+    }
+}
+
+.SectionContent h4 {
+    font-weight:bold;
+    margin:-10px 0 2px 0;
+    font-size:18px;
+}
+
+#seealsoSectionContent > h4.subHeading {
+    font-size:1em;
+}
+
+.SectionContent a[href="#top"] {
+    display:none;
+}
+
+#FooterContent, #BodyContent{
+    p {
+        margin:0;
+    }
+}
+
+a[onclick^="javascript:navigate"] {
+    cursor: pointer;
+} 

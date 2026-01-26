@@ -1,0 +1,16 @@
+﻿@import 'defaults-and-helpers';
+@import 'legacy';
+@import 'highlight';
+@import 'sec-header';
+@import 'site';
+@import 'media-queries';
+@import 'asciidoc';
+
+ /*overrides*/
+
+span.image {
+	/* asciidoc inline images */
+	img, img.img-responsive {
+		display: inline;
+	}
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Test File 1",
+        "fileName": "file-to-keep-1",
+        "children": [
+            {
+                "title": "Test File 2",
+                "fileName": "file-to-keep-2.html"
+            },
+            {
+                "title": "API Test",
+                "fileName": "infragistics~api.html"
+            }
+        ]
+    }
+]

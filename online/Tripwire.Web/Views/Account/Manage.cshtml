@@ -1,0 +1,31 @@
+﻿@model Tripwire.Web.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+<h1>@ViewBag.Title.</h1>
+
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+{
+    @Html.AntiForgeryToken()
+    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
+
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{ 
+    @Html.Partial("_SetPasswordPartial")
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

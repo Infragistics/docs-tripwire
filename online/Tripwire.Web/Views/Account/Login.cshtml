@@ -1,0 +1,31 @@
+﻿@model Tripwire.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_plain.cshtml";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    @Html.TextBoxFor(m => m.UserName, new { placeholder = "username", @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.UserName)
+    
+    @Html.PasswordFor(m => m.Password, new { placeholder = "password", @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Password)
+    
+    <div>@Html.LabelFor(m => m.RememberMe) @Html.CheckBoxFor(m => m.RememberMe)</div>
+
+    <input type="submit" value="Login" class="btn btn-default btn-primary" />
+}
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

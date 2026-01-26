@@ -1,0 +1,54 @@
+﻿@{
+	string path = System.Configuration.ConfigurationManager.AppSettings["IgniteRootUrl"];
+	string culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+}
+@if (culture == "ja")
+{
+<div id="headerSecondary" class="igw-main-header">
+	<section class="igw-main-nav igw-wrapper" id="menu-cente">
+		<div class="igw-main-navbar clearfix">
+			<h3 class="special-for-controls">
+				<a class="headerIcon_click" href="//jp.infragistics.com/products/ignite-ui">Ignite UI</a>
+				<span>| ヘルプ トピック</span>
+			</h3>
+			<nav class="igw-nav-wrapper">
+				<ul class="igw-header-nav">
+					<li><a class="" href="@path/grid/overview">サンプル</a></li>
+					<li><a class="" href="@path/bootstrap-theme-generator">テーマ ジェネレーター</a></li>
+					<li><a href="http://designer.igniteui.com/index-release-jp.html">ページ デザイナー</a></li>
+					<li><a class="active" href="@path/help">ヘルプ トピック</a></li>
+					<li><a class="" href="@path/help/api/2016.2/">API リファレンス</a></li>
+					<li>
+						<a class="igw-mobile-hidden igw-header-btn igw-btn" href="//jp.infragistics.com/free-downloads/ignite-ui"><span>トライアル版をダウンロード</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</div>
+}
+else
+{
+<div id="headerSecondary" class="igw-main-header">
+	<section class="igw-main-nav igw-wrapper" id="menu-cente">
+		<div class="igw-main-navbar clearfix">
+			<h3 class="special-for-controls">
+				<a class="headerIcon_click" href="//www.infragistics.com/products/ignite-ui">Ignite UI</a>
+				<span>| Help Topics</span>
+			</h3>
+			<nav class="igw-nav-wrapper">
+				<ul class="igw-header-nav">
+					<li><a class="" href="@path/grid/overview">Samples</a></li>
+					<li><a class="" href="@path/bootstrap-theme-generator">Themе Generator</a></li>
+					<li><a href="http://designer.igniteui.com">Page Designer</a></li>
+					<li><a class="active" href="@path/help">Help Topics</a></li>
+					<li><a class="" href="@path/help/api/2016.2/">API Reference</a></li>
+					<li>
+						<a class="igw-mobile-hidden igw-header-btn igw-btn" href="//www.infragistics.com/free-downloads/ignite-ui"><span>Download Trial</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</div>
+}

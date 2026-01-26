@@ -1,0 +1,20 @@
+{
+	"encoding": "shift_jis",
+	"jQueryApiUrl": "https://jp.igniteui.com/help/api/20<%= major %>.<%= minor %>",
+	"SamplesUrl": "https://jp.igniteui.com",
+	"SamplesEmbedUrl": "https://github.com/IgniteUI/help-samples/tree/master/<%= major %>.<%= minor %>/JA",
+	"HelpRootUrl": "https://jp.igniteui.com/help/",
+	"DesignerUrl": "http://designer.igniteui.com/index-release-jp.html",
+	"PlatformName": "jQuery",
+	"ProductName": "Ignite UI for jQuery",
+	"ProductFamilyName": "Ignite UI",
+	"ProductNameMVC": "Ignite UI for MVC",
+	"ProductNameASPNETCore": "Ignite UI for Asp.Net Core",
+	"ProductFamilyID": "16",
+	"ProductVersion": "20<%= major %>.<%= minor %>",
+	"ProductVersionCondensed": "20<%= major %><%= minor %>",
+	"ProductVersionShort": "<%= major %>.<%= minor %>",
+	"ProductVersionFull": "20<%= major %> Volume <%= minor %>",
+	"InstallPath": "C:\\Program Files (x86)\\Infragistics\\20<%= major %>.<%= minor %>\\Ignite UI for jQuery",
+	"FeedbackEmail": "JapanHelpFeedback@infragistics.com"
+}

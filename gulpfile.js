@@ -1,0 +1,21 @@
+var gulp = require('gulp');
+var config = require('./config.js').get();
+
+require('./gulp/task-copyImages.js').registerTask(gulp, config);
+require('./gulp/task-asciidoc.js').registerTask(gulp, config);
+require('./gulp/task-build-help.js').registerTask(gulp);
+require('./gulp/task-toc.js').registerTask(gulp, config);
+require('./gulp/task-offline.js').registerTask(gulp, config);
+require('./gulp/task-renamer.js').registerTask(gulp, config);
+require('./gulp/task-renameFiles.js').registerTask(gulp, config);
+require('./gulp/task-offlineResources.js').registerTask(gulp, config);
+require('./gulp/task-sass.js').registerTask(gulp);
+require('./gulp/task-japanese-encoding.js').registerTask(gulp);
+require('./gulp/task-syncFileSystemToTOC.js').registerTask(gulp, config);
+require('./gulp/task-sitemap.js').registerTask(gulp, config);
+require('./gulp/task-solrIndex.js').registerTask(gulp, config);
+require('./gulp/task-clean-working-folders.js').registerTask(gulp, config);
+require('./gulp/task-copy-api-files.js').registerTask(gulp, config);
+require('./gulp/task-copy-offline-files.js').registerTask(gulp, config);
+require('./gulp/task-copy-online-files.js').registerTask(gulp, config);
+require('./gulp/task-build-help-docs.js').registerTask(gulp, config);

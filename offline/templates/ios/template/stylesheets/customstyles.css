@@ -1,0 +1,421 @@
+﻿/* 
+    Code Snippet Coloring
+*/
+
+table.ig-layout tr td
+{
+    _border-bottom:1px solid #ccc !important;
+    _border-top:1px solid #ccc !important;
+    _margin-top:6px;
+    _margin-bottom:6px;
+}
+
+code 
+{ 
+	font-family: Consolas, "Courier New", Courier, Sans-Serif;
+	font-size: 10pt;
+	color: #000000;
+	white-space: pre; 
+}
+
+code.VB
+{
+    color: #000000;
+}
+
+.keyword {
+	color: Blue;
+}
+
+.comment, .blue, .red, .brownish, .maroon, .yellow, .purple  {
+	font-family: Consolas, Courier New, Courier, Sans-Serif;
+	font-size: 10pt;
+}
+
+.comment {
+    color: Green;    
+}
+
+.blue  {
+    color: Blue;
+}
+
+.red {
+    color: Red;    
+}
+
+.brownish {
+    color: #A31515;
+}
+
+.maroon
+{
+    color: #800000;
+}
+
+.yellow
+{
+	color: #000000;
+	background-color: #FFFF00;
+}
+
+.purple {
+	font-weight: bold;
+	color: #800080;
+}
+
+.string {
+	color: #A31515;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  zoom: 1;
+  min-width: 630px;
+  max-width: 750px;
+  overflow: auto;
+  width: expression(this.width > 750 ? 750: true);
+  white-space: pre-wrap; /* CSS3 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+}
+/* ---------- End of Code Snippet Coloring ---------- */
+
+/* 
+    IM Topic Styling
+*/
+
+.ig-block-title, .ig-title-header h1
+{
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight:normal;
+    letter-spacing:-1px;
+}
+
+.ig-block-title
+{
+    font-size:1.3em;
+    margin-top:20px;
+}
+
+.ig-block-title h2
+{
+    color:#666;
+    letter-spacing:-1px;
+    font-size: 1.5em !important;
+}
+
+.ig-title-header h1
+{
+    border-bottom: 1px solid #999;
+    padding:0px;
+    margin:0px;
+    margin-top:15px;
+    font-size:3em !important;
+    color:#666;
+}
+
+.ig-block-header
+{
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:normal;
+}
+
+.ig-layout tbody tr th h4,
+.ig-block-header h3,
+.ig-layout tbody tr th h3, 
+.ig-block-header h2,
+.ig-layout tbody tr th h2
+{
+    color:#666;
+    font-size: 1.17em !important;
+    _font-size: 2.2em !important;
+}
+
+.ig-api-link {
+    background-color:#eee;
+    color: #36c;
+    font-weight: bold;
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+.ig-topic-link {
+    color: #36c;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.ig-code-in-text {
+    background-color: #ccc;
+    font-family:Consolas, Courier New, Courier, Sans-Serif;
+}
+
+.ig-note {
+    background-color: #ffc;
+    display: block;
+    padding: 8.5px;
+    margin: 0 0 18px;
+    line-height: 18px;
+    font-size: 12px !important;
+    border: 1px solid #ccc;
+    width: 90%;
+}
+
+.ig-bold, table.ig-layout table th p
+{
+    font-weight: bold;
+}
+
+.ig-note-caption, .ig-tip-caption 
+{ 
+    display: block; 
+    font-weight: bold;
+}
+
+.ig-icon-note, .ig-icon-tip
+{
+    position:relative;
+    display:block;
+    clear:both;
+    margin:0.8em;
+    min-height:50px;
+}
+
+.ig-icon-note div, .ig-icon-tip div
+{
+    padding:10px !important;
+    min-height:50px !important;
+}
+
+.ig-icon-note-ico
+{
+    float:left;
+    width:40px;
+    background-image:url(../images/ig-note-ico.png);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+}
+
+.ig-icon-tip-ico
+{
+    float:left;
+    width:40px;
+    background-image:url(../images/ig-tip-ico.png);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+}
+
+.ig-icon-note-content, .ig-icon-tip-content
+{
+    width:80%;
+}
+
+.ig-level-1 { margin-left: 20px; }
+.ig-level-2 { margin-left: 40px; }
+.ig-level-3 { margin-left: 60px; }
+.ig-level-4 { margin-left: 80px; }
+.ig-italic { font-style: italic; }
+.ig-strikethrough { text-decoration: line-through; }
+.ig-centered { text-align: center; }
+
+.ig-menu-command {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+/* BEGIN: Adjustments for local help layout */
+DIV.OH_outerContent div#mainSection table
+{
+  border:0px;
+}
+
+DIV.OH_outerContent div#mainSection table th 
+{
+  border:0px;
+}
+
+DIV.OH_outerContent div#mainSection table td
+{
+  border:0px;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout tr
+{
+  _border-bottom:1px solid #ccc;
+  _border-top:1px solid #ccc;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout table
+{
+  border:1px solid #bbbbbb;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout table
+{
+  border:1px solid #bbbbbb;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout table th 
+{
+  border:1px solid #bbbbbb;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout table td
+{
+  border:1px solid #bbbbbb;
+}
+
+DIV.OH_outerContent div#mainSection tr
+{
+    
+}
+
+DIV.OH_outerContent div#mainSection .ig-layout tbody tr th h4,
+DIV.OH_outerContent div#mainSection .ig-block-header h3,
+DIV.OH_outerContent div#mainSection .ig-layout tbody tr th h3, 
+DIV.OH_outerContent div#mainSection .ig-block-header h2,
+DIV.OH_outerContent div#mainSection .ig-layout tbody tr th h2
+{
+    color:#666;
+    font-size: 1.17em !important;
+    _font-size: 1.75em !important;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout th 
+{
+  background-color:transparent;
+  vertical-align:top;
+  text-align:left;
+}
+
+DIV.OH_outerContent div#mainSection table.ig-layout table th 
+{
+  background-color:#e5e5e5;
+  vertical-align:middle;
+}
+/* END: Adjustments for local help layout */
+
+/* BEGIN: ig-layout styles*/
+table.ig-layout
+{
+    margin-top:15px;
+    border-collapse:collapse;
+    width: 100%;
+    font-size: 1em !important;
+}
+
+table.ig-layout table td, table.ig-layout table th
+{
+    font-size: 1.1em !important;
+}
+
+table.ig-layout td
+{
+    font-size: 1.17em !important;
+}
+
+table.ig-layout tr th, table.ig-layout tr td
+{
+    vertical-align:top;
+    border:0px;
+    background-color:transparent;
+    padding-top:10px;
+}
+
+table.ig-layout tr th
+{
+      width:150px;
+      min-width:150px;
+      border:0px;
+      text-align:left;
+      font-size: 1.33em !important;
+      _font-size: .7em !important;
+}
+
+table.ig-layout table tr th
+{
+    width:auto;
+    text-align:center;
+    font-size: 1.33em !important;
+    _font-size: 1.1em !important;
+}
+
+table.ig-layout tr th h2
+{
+    margin:0px;
+    border:0px;
+    font-size: 1.2em;
+}
+
+table.ig-layout > tbody > tr > td
+{
+    padding-left: 25px;
+}
+
+/* IE Hack */
+table.ig-layout tr
+{
+    _border-bottom:1px solid #ccc;
+    _border-top:1px solid #ccc;
+}
+
+table.ig-layout td:last-child
+{
+    border-bottom:1px solid #ccc !important;
+    border-top:1px solid #ccc !important;
+}
+
+table.ig-layout table
+{
+    width:          100%;
+    margin-top:     5px;
+    margin-bottom:  5px;
+    font-family: verdana,arial,sans-serif;
+    font-size:11px !important;
+    color:#333333;
+    border-width: 1px;
+    border-color: #bbbbbb;
+    border-collapse: collapse;
+}
+
+table.ig-layout table tr td
+{
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #bbbbbb;
+    background-color: #ffffff;
+}
+
+table.ig-layout table tr th
+{
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #bbbbbb;
+    background-color: #dedede;
+}
+
+table.ig-layout table tr, table tr
+{
+    vertical-align: top;
+}
+/* END: ig-layout styles */
+
+
+
+/* ---------- End of IM Topic Styling ---------- */

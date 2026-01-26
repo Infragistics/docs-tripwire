@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = Resources.Main.Error_404_Page_Title;
+}
+
+<h1>@Resources.Main.Oops</h1>
+<p>
+    @Resources.Main.Error_404_Message
+    @Html.Raw(string.Format(Resources.Main.Error_Common_Format, Url.Content("~/" + ViewBag.Product + "/")))
+</p>

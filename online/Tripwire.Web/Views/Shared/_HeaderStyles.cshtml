@@ -1,0 +1,39 @@
+﻿@{
+    string main = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+}
+
+<script>
+function handleErrorCSS(elem, newUrl, failed) {
+    try {
+        if (failed || (elem.sheet.cssRules && !elem.sheet.cssRules.length)) {
+            elem.href = newUrl;
+        }   
+    }
+    catch (ex) {
+
+    }
+}
+</script>
+
+<link href="@main/assets/modern/css/layout.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/layout.css")')"
+      onerror="handleErrorCSS(this, '@Url.Content("~/Content/fallback/layout.css")', true)" type="text/css" rel="stylesheet" />
+<link href="@main/assets/modern/css/animate-custom.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/animate-custom.css")')"
+      onerror="handleErrorCSS(this, '@Url.Content("~/Content/fallback/animate-custom.css")', true)" type="text/css" rel="stylesheet" />
+<link href="@main/assets/modern/css/fontello.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/fontello.css")')"
+      onerror="handleErrorCSS(this, '@Url.Content("~/Content/fallback/fontello.css")', true)" type="text/css" rel="stylesheet" />
+
+
+<link href="@main/css/footer.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/footer.css")')"
+      onerror="handleErrorCSS(this, '@Url.Content("~/Content/fallback/footer.css")', true)" type="text/css" rel="stylesheet" />
+<link href="@main/css/navigation.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/navigation.css")')"
+      onerror="handleErrorCSS(this, '@Url.Content("~/Content/fallback/navigation.css")', true)" type="text/css" rel="stylesheet" />
+
+@{
+    string ignite = System.Configuration.ConfigurationManager.AppSettings["IgniteRootUrl"];
+}
+
+@if (ViewBag.ProductFamilyName == "IgniteUI")
+{
+    <link href="@ignite/css/headersecondary.css" onload="handleErrorCSS(this, '@Url.Content("~/Content/fallback/headersecondary.css")')" rel="stylesheet" type="text/css">
+}
+

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Infragistics&reg; NucliOS&trade; <%= productVersionFull %></title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" media="all" />
+	<link rel="stylesheet" type="text/css" media="print" href="stylesheets/stylesPrint.css" />
+	<script src="script/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="script/webutility.js"></script>
+    <script lang="javascript">var defaultTopic='<%= defaultTopicName %>';</script>
+	<script type="text/javascript">
+		var copyURL = "";
+		function getQueryStringParams(sParam)
+		{
+			var sPageURL = window.location.search.substring(1);
+			var sURLVariables = sPageURL.split('&');
+			for (var i = 0; i < sURLVariables.length; i++)
+			{
+				var sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] == sParam)
+				{
+					return sParameterName[1];
+				}
+			}
+		}
+		
+		function addEvent(evnt, elem, func) {
+			if (elem.addEventListener)  // W3C DOM
+			  elem.addEventListener(evnt,func,false);
+			else if (elem.attachEvent) { // IE DOM
+			  elem.attachEvent("on" + evnt, func);
+			}
+			else { // Not much to do
+			  elem[evnt] = func;
+			}
+		}
+		
+		function toggleTOC()
+		{
+			var contents = document.getElementById('contents');
+			var tocContainer = document.getElementById('tocContainer');
+			
+			if (this.getAttribute('class') == 'open')
+			{
+				this.setAttribute('class', '');
+				contents.setAttribute('class', '');
+				tocContainer.setAttribute('class', '');
+				
+				window.name = "hideTOC";
+			}
+			else
+			{
+				this.setAttribute('class', 'open');
+				contents.setAttribute('class', 'isShowingTOC');
+				tocContainer.setAttribute('class', 'isShowingTOC');
+				
+				window.name = "";
+			}
+			return false;
+		}
+		
+		function toggleTOCEntryChildren(e)
+		{
+			e.stopPropagation();
+			var currentClass = this.getAttribute('class');
+			if (currentClass == 'children') {
+				this.setAttribute('class', 'children open');
+			}
+			else if (currentClass == 'children open') {
+				this.setAttribute('class', 'children');
+			}
+			return false;
+		}
+		
+		function tocEntryClick(e)
+		{
+			e.stopPropagation();
+			return true;
+		}
+		
+		function iterateTOCNode(element)
+		{
+			if ($(element).has("ul").length > 0)
+			{
+				$(element).addClass("children");
+				$(element).children(":first").addClass("disclosure");
+				$(element).children("ul:first").children("li").each(function(index) {
+					iterateTOCNode(this);
+				});
+			}
+			else
+			{
+				$(element).children(":first").addClass("nodisclosure");
+			}
+		}
+		
+		function processTOC()
+		{
+			$("#toc > li").each(function(index) {
+				iterateTOCNode(this);
+			});
+		}
+		
+		function init()
+		{
+			processTOC();
+			
+			$('iframe').load(function() {
+				var frameContent = document.getElementById("topiccontent");
+				frameContent.height = 700;
+                frameContent.height = (document.getElementById('contents').scrollHeight - 30) + 'px';
+                /*
+					if(frameContent.contentDocument) {
+						frameContent.height = frameContent.contentDocument.documentElement.scrollHeight + 30; //FF 3.0.11, Opera 9.63, and Chrome
+					} 
+					else {
+						frameContent.height = frameContent.contentWindow.document.body.scrollHeight + 30; //IE6, IE7 and Chrome
+					}
+                */
+			});
+			
+			var tocButton = document.getElementById('table_of_contents');
+			addEvent('click', tocButton, toggleTOC);
+			
+			var tocList = document.getElementById('toc');
+			var tocEntries = tocList.getElementsByTagName('li');
+			for (var i = 0; i < tocEntries.length; i++) {
+				addEvent('click', tocEntries[i], toggleTOCEntryChildren);
+			}
+			
+			$('a').click(function() {
+				copyURL = "http://help.infragistics.com/iOS/<%= productVersionCondensed %>/" + '?page=' + $(this).attr('href');
+				var emailLink = "mailto:?to=&subject=NucliOS Topic&body=" + copyURL;
+				$('#email_link').attr('href', emailLink);
+			});
+			
+			if (window.name == "hideTOC") {
+				toggleTOC.call(tocButton);
+			}
+		}
+		
+		// If showing in Xcode, hide the TOC and Header
+		if (navigator.userAgent.match(/xcode/i)) {
+			document.getElementById("contents").className = "hideInXcode"
+			document.getElementById("tocContainer").className = "hideInXcode"
+			document.getElementById("top_header").className = "hideInXcode"
+		}
+
+		// Start of the DocX section to load the default document
+		var defaultContentPageSet = false;
+
+		function documentElement(id){
+			return document.getElementById(id);
+		}
+
+		function setDefaultContentPage()
+		{
+			init();
+			
+			if (getQueryStringParams('page'))
+			{
+				window.frames['topiccontent'].location.replace(getQueryStringParams('page'));
+				defaultContentPageSet = true;
+				
+				copyURL = "http://help.infragistics.com/iOS/<%= productVersionCondensed %>/" + '?page=' + getQueryStringParams('page');
+				var emailLink = "mailto:?to=&subject=NucliOS Topic&body=" + copyURL;
+				$('#email_link').attr('href', emailLink);
+				return;
+			}
+			
+			if(!defaultContentPageSet)
+			{
+				window.frames['topiccontent'].location.replace(defaultTopic);
+				defaultContentPageSet = true;
+				
+				copyURL = "http://help.infragistics.com/iOS/<%= productVersionCondensed %>/" + '?page=' + defaultTopic;
+				var emailLink = "mailto:?to=&subject=NucliOS Topic&body=" + copyURL;
+				$('#email_link').attr('href', emailLink);
+			}
+		}
+		// End of the DocX section to load the default document
+
+    </script>
+    <style>
+        frame
+        {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+	<body onload="setDefaultContentPage()">
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<a id="libraryTitle" href="index.html">Infragistics&reg; NucliOS&trade; <%= productVersionFull %></a>
+				<a id="developerHome" href="http://www.infragistics.com">Infragistics</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode"><%= title %></h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li style="float:right; padding-right: 5px;">
+					<a id="email_link" href="mailto:?" style="text-decoration: none;">
+					<img src="webimages/25.gif" style="padding-top: 5px; vertical-align: bottom; border-style: none;" /> Share Link
+					</a>
+				<li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+                <%= toc %>
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Reference Topic" name="top"></a>
+				<div id="container">
+					<iframe id="topiccontent" name="topiccontent" width="100%" style="border: none;" src="webblank.html" />
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 Infragistics. All rights reserved.</span><br /></p>	
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

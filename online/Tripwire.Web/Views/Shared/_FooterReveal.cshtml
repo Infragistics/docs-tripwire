@@ -1,0 +1,193 @@
+﻿@{
+    string path = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+    string culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+
+    string url = "CanonicalUrl is NULL";
+
+    if (ViewData["CanonicalUrl"] != null)
+    {
+        url = ViewData["CanonicalUrl"].ToString();
+    }
+}
+
+@if (culture == "ja")
+{
+<footer class="ui-footer ui-footer--clearfix bg-gradient--primary text-white" data-footer-theme="reveal">    
+    <h2>さまざまなリソースへのリンク</h2>
+    <div class="ui-footer__wrap ui-footer--clearfix ui-footer__icons">
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.facebook.com/reveal.bi" target="_blank"> <img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/facebook-icon.svg" alt="Facebook" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.instagram.com/reveal.bi/" target="_blank"><img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/instagram-icon.svg" alt="Instagram" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://twitter.com/reveal_bi" target="_blank"><img class="b-lazy loading" src="https://download.infragistics.com/marketing/reveal/twitter-icon.svg" alt="Twitter" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.youtube.com/playlist?list=PLZ4rRHIJepBt-USWdh-9BimHh-GjPAGUH" target="_blank"> <img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/youtube-icon.svg" alt="Youtube" width="20" height="20" data-was-processed="true"></a>
+    </div>
+    <div class="ui-footer__wrap ui-footer__wrap--newsletter ui-footer--clearfix" style="max-width: 750px;">
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>開発者向け</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://www.revealbi.io/help/developer"><span>Reveal Embedded SDK製品ドキュメント</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/help/"><span>Revealアプリケーションドキュメント</span></a></li>
+                            <li><a class="menu__link" href="https://static.infragistics.com/marketing/reveal/business-teams-reveal-architecture-and-security.pdf?v=201903141130"><span>アーキテクチャーおよびセキュリティガイド</span></a></li>
+                            <li><a class="menu__link" href="https://static.infragistics.com/marketing/reveal/business-teams-reveal-embedded-web-SDK-guide.pdf?v=201903141130"><span>Web向けEmbedded SDK開発者ガイド</span></a></li>
+                            <li><a class="menu__link" href="https://static.infragistics.com/marketing/reveal/business-teams-reveal-SDK-API.pdf?v=201903141130"><span>SDK APIガイド</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 2 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>リソース</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://jp.infragistics.com/my-account/submit-support-request"><span>サポート</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/blogs/tags/Reveal"><span>Blog</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/blogs/tags/Reveal"><span>Blog（英語)</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/ideas/reveal"><span>機能要望（英語）</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/forums/reveal"><span>フォーラム（英語）</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 3 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>ダウンロード</span></div>
+                        <ul>
+                            <!-- NEED FINAL LINKS -->
+                            <li><a class="menu__link" href="https://www.revealbi.io/download-sdk"><span>Embedded SDK</span></a></li>
+                            <li><a class="menu__link" href="https://app.revealbi.io/"><span>Web</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/products/reveal/download/desktop"><span>デスクトップ</span></a></li>
+                            <li><a class="menu__link" href="https://testflight.apple.com/join/ofVYXnko"><span>iOS</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/products/reveal/download/android"><span>Android</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 4 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>Company</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://staging.revealbi.io/jp/about-us"><span>会社概要</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/jp/about-us#connect"><span>お問い合わせ</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/jp/about-us#connect"><span>グローバル拠点</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer id="footer" class="container-fluid footer">
+    <span class="small d-block">powered by</span><a class="link--opacity-highlight8" href="https://www.infragistics.com"> <img class="logo" src="https://download.infragistics.com/marketing/Website/General/Infragistics-horizontal.svg" alt="Infragistics" /> </a>
+    <ul class="list-inline list-inline--piped font-weight-light mb-0 pb-2 small">
+        <li class="list-inline-item"><a href="https://jp.infragistics.com/legal/privacy">プライバシーポリシー</a></li>
+        <li class="list-inline-item"><a href="https://www.infragistics.com/legal/cookie-policy">クッキーポリシー（英語）</a></li>
+        <li class="list-inline-item"><a href="https://jp.infragistics.com/legal/terms-of-use">利用条件</a></li>
+    </ul>
+    <div class="container-fluid footer footer-copyright">
+        <p id="copyright" class="m-0" style="color: #666;">© Copyright @DateTime.Now.Year.ToString() INFRAGISTICS. All Rights Reserved.</p>
+    </div>
+</footer>
+}
+else
+{
+<footer class="ui-footer ui-footer--clearfix bg-gradient--primary text-white" data-footer-theme="reveal">
+    <h2>Follow Us for the Latest News and Updates</h2>
+    <div class="ui-footer__wrap ui-footer--clearfix ui-footer__icons">
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.facebook.com/reveal.bi" target="_blank"> <img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/facebook-icon.svg" alt="Facebook" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.instagram.com/reveal.bi/" target="_blank"><img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/instagram-icon.svg" alt="Instagram" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://twitter.com/reveal_bi" target="_blank"><img class="b-lazy loading" src="https://download.infragistics.com/marketing/reveal/twitter-icon.svg" alt="Twitter" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.linkedin.com/showcase/revealbi" target="_blank"><img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/linkedin-icon.svg" alt="Linkedin" width="20" height="20" data-was-processed="true"></a>
+        <a class="ui-footer__icon-link link--opacity-highlight" href="https://www.youtube.com/playlist?list=PLZ4rRHIJepBt-USWdh-9BimHh-GjPAGUH" target="_blank"> <img class="b-lazy loading" src="https://static.infragistics.com/marketing/reveal/youtube-icon.svg" alt="Youtube" width="20" height="20" data-was-processed="true"></a>
+    </div>
+    <div class="ui-footer__wrap ui-footer__wrap--newsletter ui-footer--clearfix" style="max-width: 750px;">
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>Developers</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://www.revealbi.io/help/developer"><span>Embedded Documentation</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/help"><span>Architecture and Security</span></a></li>
+                            <li><a class="menu__link" href="https://static.infragistics.com/marketing/reveal/business-teams-reveal-embedded-web-SDK-guide.pdf?v=201903141130"><span>Web Embedding Developer's Guide</span></a></li>
+                            <li><a class="menu__link" href="https://static.infragistics.com/marketing/reveal/business-teams-reveal-SDK-API.pdf?v=201903141130"><span>SDK API Guide</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 2 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>Resources</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://www.infragistics.com/my-account/submit-support-request"><span>Support</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/blogs/tags/Reveal"><span>Blogs</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/ideas/reveal"><span>Ideas</span></a></li>
+                            <li><a class="menu__link" href="https://www.infragistics.com/community/forums/reveal"><span>Forums</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 3 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>Try It Now</span></div>
+                        <!-- NEED FINAL LINKS -->
+                        <ul>
+                            <li><a class="menu__link" href="https://app.revealbi.io/"><span>Web</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/products/reveal/download/desktop"><span>Desktop</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/download-sdk"><span>Request SDK</span></a></li>
+                            <li><a class="menu__link" href="https://testflight.apple.com/join/ofVYXnko"><span>iOS</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/products/reveal/download/android"><span>Android</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Column 4 -->
+        <div class="ui-footer__col-one-fourth ui-footer__col-block">
+            <div class="ui-footer__menu">
+                <ul class="ui-footer__menu-list">
+                    <li class="ui-footer__menu-list-item">
+                        <div class="ui-footer__category"><span>Company</span></div>
+                        <ul>
+                            <li><a class="menu__link" href="https://www.revealbi.io/about-us"><span>Who Are We</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/about-us#connect"><span>Contact Us</span></a></li>
+                            <li><a class="menu__link" href="https://www.revealbi.io/about-us#connect"><span>Global Offices</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer id="footer" class="container-fluid footer">
+    <span class="small d-block">powered by</span><a class="link--opacity-highlight8" href="https://www.infragistics.com"> <img class="logo" src="https://download.infragistics.com/marketing/Website/General/Infragistics-horizontal.svg" alt="Infragistics" /> </a>
+    <ul class="list-inline list-inline--piped font-weight-light mb-0 pb-2 small">
+        <li class="list-inline-item"><a href="https://www.infragistics.com/legal/privacy">Privacy Policy</a></li>
+        <li class="list-inline-item"><a href="https://www.infragistics.com/legal/cookie-policy">Cookies</a></li>
+        <li class="list-inline-item"><a href="https://www.infragistics.com/legal/terms-of-use">Terms of Use</a></li>
+    </ul>
+    <div class="container-fluid footer footer-copyright">
+        <p id="copyright" class="m-0" style="color: #666;">© Copyright @DateTime.Now.Year.ToString() INFRAGISTICS. All Rights Reserved.</p>
+    </div>
+</footer>
+}

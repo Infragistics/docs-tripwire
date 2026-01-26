@@ -1,0 +1,9 @@
+﻿////
+|metadata|
+
+|metadata|
+////
+
+= Test Document
+
+The the data is applied to the pick:[wpf.sl=DataSource,jq=dataSource] member of the control.

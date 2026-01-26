@@ -1,0 +1,233 @@
+﻿@using Tripwire.Web
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="@Url.Content("~/img/favicon.ico")" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <title>@string.Format(ViewBag.PageTitle_Format, ViewBag.Title)</title>
+
+    @if (ViewData["MetaKeywords"] != null)
+    {
+        <meta name="keywords" content="@ViewData["MetaKeywords"].ToString()" />
+    }
+
+    @if (ViewData["MetaDescription"] != null)
+    {
+        <meta name="description" content="@ViewData["MetaDescription"].ToString()" />
+    }
+
+    @if (ViewData["CanonicalUrl"] != null)
+    {
+        <link rel="canonical" href="@ViewData["CanonicalUrl"].ToString()" />
+
+        string canonicalUrl = ViewData["CanonicalUrl"].ToString();        
+
+        if (canonicalUrl.Contains("www."))
+        {
+            <link rel="alternate" href="@canonicalUrl" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.", "jp.")" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".com", ".co.kr")" hreflang="ko-kr" />
+        }
+        else if (canonicalUrl.Contains("jp."))
+        {
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.", "www.")" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl.Replace("jp.infragistics.com", "www.infragistics.co.kr")" hreflang="ko-kr" />
+        }
+        else if (canonicalUrl.Contains(".co.kr"))
+        {
+            <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en" />
+            <link rel="alternate" href="@canonicalUrl.Replace(".co.kr", ".com")" hreflang="en-us" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja" />
+            <link rel="alternate" href="@canonicalUrl.Replace("www.infragistics.co.kr", "jp.infragistics.com")" hreflang="ja-jp" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ko" />
+            <link rel="alternate" href="@canonicalUrl" hreflang="ko-kr" />
+        }
+        <link rel="alternate" href="@ViewData["CanonicalUrl"].ToString()" hreflang="x-default" />
+    }
+
+    @Styles.Render(BundleVirtualPaths.Style_Multiproduct)
+    @Scripts.Render(BundleVirtualPaths.Script_Modernizr)
+
+    <!--[if lt IE 9]>
+    <style>
+        .col-sm-3 { width: 25%; }
+        .col-sm-4 {  width: 33.33333333%; }
+        .col-sm-8 { width: 66.66666667%; }
+        .col-sm-9 { width: 75%; }
+        .col-sm-3, .col-sm-4, .col-sm-8, .col-sm-9 { float:left; }
+    </style>
+    <![endif]-->
+
+    <script>
+        window.baseURI = "@Url.Content("~/" + ViewBag.Product + "/")"; window.onerror = function (e, t, n) { var r = "errorText=" + e + "&url=" + t + "&lineNumber=" + n; var i; if (typeof XMLHttpRequest !== "undefined") { i = new XMLHttpRequest } else { var s = ["MSXML2.XmlHttp.5.0", "MSXML2.XmlHttp.4.0", "MSXML2.XmlHttp.3.0", "MSXML2.XmlHttp.2.0", "Microsoft.XmlHttp"]; for (var o = 0, u = s.length; o < u; o++) { try { i = new ActiveXObject(s[o]); break } catch (a) { } } } i.open("POST", "@Url.Content("~/api/error")", true); i.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); i.send(r) };
+        //Google Analytics
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-392932-13', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+<body data-mode="online" data-versions="@ViewBag.PublishedVersions" data-product-list="@ViewBag.ProductList" data-subproduct-list="@ViewBag.SubProductList">
+    <header>
+        <div class="header-icon">
+            <h1 class="sr-only">@ViewBag.Home_Link</h1>
+            @* TODO: Consider reducing dependencies on layout views, these might not be available in all views (e.g. some Errors) ! *@
+            <a href="@Url.Content("~/" + ViewBag.ProductURL)" title="@ViewBag.Home_Link">
+                <img src="@Url.Content("~/img/" + ViewBag.Logo)" class="main-logo" alt="@ViewBag.Home_Link">
+            </a>
+        </div>
+    </header>
+    <div class="container main">
+        <div class="row inner-container">
+            <div class="col-sm-3 col-md-3 nav-sidebar">
+                <div id="nav-container" class="collapse in">
+                    <!-- Nav tabs -->
+                    <h3><a href="@Url.Content("~/" + ViewBag.ProductURL)" class="toc-header-link" title="@ViewBag.Home_Link">@ViewBag.Home_Link</a></h3>
+
+                    <!-- Tab panes -->
+                    <div id="toc-tree" class="row"></div>
+                    <div id="toc-tree-loader"></div>
+
+                    <script type="text/javascript">
+                        document.getElementById("toc-tree").style.display = "none";
+                    </script>
+                </div>
+                <button id="nav-button" class="btn btn-default form-control ui-visible-phone">@Resources.Main.NavShow_Label</button>
+            </div>
+            <div class="col-sm-9 col-md-9 top-level-content-wrap">
+                <div id="menubar" class="row help-search-holder">
+                    @using (Html.BeginForm("Search", "Search", FormMethod.Get, new { @class = "clearfix form-inline" }))
+                    {
+                        if (!string.IsNullOrEmpty(ViewBag.Version))
+                        {
+                            // keep the version on search submits
+                            <input id="v" name="v" type="hidden" class="form-control" value="@ViewBag.Version" />
+                        }
+                        <div class="form-group">
+                            <div class="relative">
+                                <label for="query" class="sr-only">@Resources.Main.Search</label>
+                                <input id="query" name="query" type="text" placeholder="@Resources.Main.Search" class="form-control" value="@ViewBag.Query" />
+                                <button id="searchButton" value="@Resources.Main.Search" type="submit" class="btn btn-default">
+                                    <span class="ui-icon ui-icon-search"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <div class="version-selector-wrap">
+
+                    <div id="version-selector">
+                        <div id="version-selector-label">
+                            @Resources.Main.Version
+                            <span id="version-selector-current-label"></span>
+                        </div>
+                        <div id="selector-combo" class="none"></div>
+                    </div>
+                </div>
+
+                <div id="feedback-container">
+                    <div class="feedback-title">Is this content useful?</div>
+                    <div class="feedback-ratings">
+                        <span class="feedback-rating" data-value="true"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></span>
+                        <span class="feedback-rating" data-value="false"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></span>
+                    </div>
+                    <div id="feedback-rating-sent-message" class="feedback-rating-message">Thank you for your feedback!</div>
+                    <div id="feedback-rating-message" class="feedback-rating-message">Thank you for your feedback! You have rated this topic in the last 30 days.</div>
+                    <div class="feedback-comment-container">
+                        <textarea name="feedback-textbox" id="feedback-textbox" class="form-control" cols="24" rows="10" placeholder="(comments are optional)"></textarea>
+                        <div class="text-right">
+                            <button id="feedback-button-cancel" class="btn btn-link btn-xs"></button>
+                            <button id="feedback-button" class="btn btn-default btn-xs">Send Feedback</button>
+                        </div>
+                    </div>
+                </div>
+
+                <noscript>
+                    <div class="alert alert-danger alert-dismissible">
+                        @Resources.Main.Error_NoJS_Message
+                    </div>
+                </noscript>
+
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-info " id="wrong-version">
+                        @TempData["Message"]
+                    </div>
+                }
+                <div id="document-content-container">
+                    @RenderBody()
+                </div>
+                <div id="fine-print" class="text-muted">
+                    <p>
+                        Copyright &copy; 1996 - @DateTime.Now.Year.ToString()
+                        Infragistics, Inc. All rights reserved.
+                    </p>
+					<p  @if (ViewBag.ExtraFinePrint != true)
+					{
+						@: hidden
+					}>@Html.Raw(string.Format(Resources.Main.Feedback_Format, string.Format("<a href='mailto:{0}?subject={1}'>{2}</a>", Resources.Main.FeedbackEmail, string.Format(ViewBag.PageTitle_Format, ViewBag.Title), Resources.Main.Email)))@*| @Resources.Main.View_on <a href="@ViewBag.GitHub_Link" target="_blank" class="github-link">GitHub</a>*@</p>
+                </div>
+            </div>
+            <div id="top-button" class="top-button">
+                <button class="btn btn-sm"></button>
+            </div>
+        </div>
+    </div>
+    <footer class="footerArea text-center">
+        <div class="footerIcon">
+            <a href="@Resources.Main.IG_Website">
+                <img src="@Url.Content("~/img/infragistics.png")" class="img-responsive" width="250" height="39">
+            </a>
+        </div>
+        <nav class="footerNav">
+            <a href="@Resources.Main.License_AgreementURL">@Resources.Main.License_Agreement</a>|
+            <a href="@Resources.Main.Contact_UsURL">@Resources.Main.Contact_Us</a>|
+            <a href="@Resources.Main.Get_HelpURL">@Resources.Main.Get_Help</a>|
+            <a href="@Resources.Main.Meet_UsURL">@Resources.Main.Meet_Us</a>|
+            <a href="@Resources.Main.Privacy_AgreementURL">@Resources.Main.Privacy_Agreement</a>|
+            @*<a href="@Resources.Main.Site_MapURL">@Resources.Main.Site_Map</a>|*@
+            <a href="@Resources.Main.Legal_InformationURL">@Resources.Main.Legal_Information</a>
+        </nav>
+    </footer>
+
+    <div class="alert alert-danger alert-dismissible none" role="alert" id="error-published-message">
+        <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">@Resources.Main.Close</span></button>
+        @Resources.Main.Error_OnPage_Message
+    </div>
+
+    @Scripts.Render(BundleVirtualPaths.Script_Default)
+
+    @* TODO: Add globalization config transform and make bundler take localized locale file on init instead
+        Possibly like http://stackoverflow.com/questions/10978979/a-localized-scriptbundle-solution
+    *@
+    <script>
+        @* RouteUrl doesn't require RouteName and setting httproute = "" allows for proper API link.
+			Will work with product == "" and will go for the DefaultApi route instead
+            *@
+		igViewer.common.topicAPI = "@Url.RouteUrl(new { httproute = "", controller = "topic", product = ViewBag.Product })/";
+
+		igViewer.locale.noResults = "@Resources.Main.NoResults_Message";
+		igViewer.locale.latestLabel = "@Resources.Main.Latest";
+		igViewer.locale.pageTitleFormat = "@ViewBag.PageTitle_Format";
+		igViewer.locale.navShowLabel = "@Resources.Main.NavShow_Label";
+        igViewer.locale.navHideLabel = "@Resources.Main.NavHide_Label";
+
+        setTimeout(function () {
+            igViewer.feedbackService.init(igViewer.versionSelector.getLatestVersion());
+        }, 500);
+	</script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

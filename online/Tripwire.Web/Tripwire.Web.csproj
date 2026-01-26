@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29F43670-6DCE-4D2D-9B30-3C94BFCB56C6}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tripwire.Web</RootNamespace>
+    <AssemblyName>Tripwire.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
+    <Compile Include="Controllers\TopicFeedbackController.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestErrorController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
+    <Compile Include="Controllers\TreeController.cs" />
+    <Compile Include="Extensions\ImagesHttpHandler.cs" />
+    <Compile Include="Extensions\ImagesRouteHandler.cs" />
+    <Compile Include="Extensions\UrlHelperExtensions.cs" />
+    <Compile Include="Filters\CanonicalFilterAttribute.cs" />
+    <Compile Include="Filters\ProxyRequireHttpsAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Android.Designer.cs">
+      <DependentUpon>Android.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Android.ja.Designer.cs">
+      <DependentUpon>Android.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusAndroid.Designer.cs">
+      <DependentUpon>ReportPlusAndroid.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusAndroid.ja.Designer.cs">
+      <DependentUpon>ReportPlusAndroid.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reveal.Designer.cs">
+      <DependentUpon>Reveal.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reveal.ja.Designer.cs">
+      <DependentUpon>Reveal.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Slingshot.Designer.cs">
+      <DependentUpon>Slingshot.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Slingshot.ja.Designer.cs">
+      <DependentUpon>Slingshot.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\SharePlusAndroid.Designer.cs">
+      <DependentUpon>SharePlusAndroid.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\SharePlusIOS.Designer.cs">
+      <DependentUpon>SharePlusIOS.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\SharePlusAndroid.ja.Designer.cs">
+      <DependentUpon>SharePlusAndroid.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\SharePlusIOS.ja.Designer.cs">
+      <DependentUpon>SharePlusIOS.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusWeb.Designer.cs">
+      <DependentUpon>ReportPlusWeb.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusWeb.ja.Designer.cs">
+      <DependentUpon>ReportPlusWeb.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusIOS.ja.Designer.cs">
+      <DependentUpon>ReportPlusIOS.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusIOS.Designer.cs">
+      <DependentUpon>ReportPlusIOS.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinFormsTAIBM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormsTAIBM.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WinFormsTAIBM.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormsTAIBM.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WinUniversal.Designer.cs">
+      <DependentUpon>WinUniversal.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinFormsTAHP.ja.Designer.cs">
+      <DependentUpon>WinFormsTAHP.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinFormsTAHP.Designer.cs">
+      <DependentUpon>WinFormsTAHP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinUniversal.ja.Designer.cs">
+      <DependentUpon>WinUniversal.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WPFTAHP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WPFTAHP.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WPFTAHP.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WPFTAHP.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Xamarin.Designer.cs">
+      <DependentUpon>Xamarin.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Xamarin.ja.Designer.cs">
+      <DependentUpon>Xamarin.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\iOS.ja.Designer.cs">
+      <DependentUpon>iOS.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\iOS.Designer.cs">
+      <DependentUpon>iOS.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ProductResources.cs" />
+    <Compile Include="Models\TocSelection.cs" />
+    <Compile Include="Resources\ReportPlusDesktop.Designer.cs">
+      <DependentUpon>ReportPlusDesktop.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ReportPlusDesktop.ja.Designer.cs">
+      <DependentUpon>ReportPlusDesktop.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reporting.Designer.cs">
+      <DependentUpon>Reporting.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reporting.ja.Designer.cs">
+      <DependentUpon>Reporting.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WPF.Designer.cs">
+      <DependentUpon>WPF.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinForms.Designer.cs">
+      <DependentUpon>WinForms.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ASPNET.Designer.cs">
+      <DependentUpon>ASPNET.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WPF.ja.Designer.cs">
+      <DependentUpon>WPF.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinForms.ja.Designer.cs">
+      <DependentUpon>WinForms.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ASPNET.ja.Designer.cs">
+      <DependentUpon>ASPNET.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\IgniteUI.ja.Designer.cs">
+      <DependentUpon>IgniteUI.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\IgniteUI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IgniteUI.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Main.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Main.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main.ja.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fallback\fontello.css" />
+    <Content Include="Content\fallback\footer.css" />
+    <Content Include="Content\fallback\navigation.css" />
+    <Content Include="Content\fallback\headersecondary.css" />
+    <Content Include="Content\fallback\animate-custom.css" />
+    <Content Include="Content\fallback\layout.css" />
+    <Content Include="Content\multiplatform.css">
+      <DependentUpon>multiplatform.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\multiplatform.min.css">
+      <DependentUpon>multiplatform.css</DependentUpon>
+    </Content>
+    <Content Include="Content\igniteui.css">
+      <DependentUpon>igniteui.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\igniteui.min.css">
+      <DependentUpon>igniteui.css</DependentUpon>
+    </Content>
+    <Content Include="Content\structure\fonts\icomoon.svg" />
+    <Content Include="Content\structure\fonts\jquery-ui.svg" />
+    <Content Include="Content\structure\images\expand.gif" />
+    <Content Include="Content\structure\images\icon_sprite.png" />
+    <Content Include="Content\structure\images\igBigPauseButton.png" />
+    <Content Include="Content\structure\images\igBigPlayButton.png" />
+    <Content Include="Content\structure\images\igBrowserLogos.png" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_off.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_off_hover.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_on.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_on_hover.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_partial.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_partial_hover.gif" />
+    <Content Include="Content\structure\images\igGrid\blank.png" />
+    <Content Include="Content\structure\images\igGrid\diagonals-medium.png" />
+    <Content Include="Content\structure\images\igGrid\filter-icons-333333.png" />
+    <Content Include="Content\structure\images\igGrid\filter-icons-FFFFFF.png" />
+    <Content Include="Content\structure\images\igGrid\group-by-label-right-edge.png" />
+    <Content Include="Content\structure\images\igGrid\touch-icons.png" />
+    <Content Include="Content\structure\images\igGrid\touch-icons.svg" />
+    <Content Include="Content\structure\images\igg_BottomDragIndicator.png" />
+    <Content Include="Content\structure\images\igg_Filter.gif" />
+    <Content Include="Content\structure\images\igg_FilterApplied.gif" />
+    <Content Include="Content\structure\images\igg_Fix.gif" />
+    <Content Include="Content\structure\images\igg_FixHover.gif" />
+    <Content Include="Content\structure\images\igg_header.gif" />
+    <Content Include="Content\structure\images\igg_sortAsc.gif" />
+    <Content Include="Content\structure\images\igg_sortDesc.gif" />
+    <Content Include="Content\structure\images\igg_Sprite.png" />
+    <Content Include="Content\structure\images\igg_Sum.gif" />
+    <Content Include="Content\structure\images\igg_SumHover.gif" />
+    <Content Include="Content\structure\images\igg_SumPressed.gif" />
+    <Content Include="Content\structure\images\igg_TopDragIndicator.png" />
+    <Content Include="Content\structure\images\igg_Unfix.gif" />
+    <Content Include="Content\structure\images\igg_UnfixHover.gif" />
+    <Content Include="Content\structure\images\igg_UnfixPressed.gif" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_collapse.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_expand.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_redo.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_undo.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\background_color.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\check.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\cut.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\decrease-font-size.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html-editor-sprite.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_delete.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_go.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_valid.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\image_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\increase-font-size.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link_break.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\page_copy.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\page_paste.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table-delete-column-icon.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table-insert-column-icon.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table_row_delete.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table_row_insert.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_center.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_justify.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_left.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_right.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_bold.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_color.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_horizontalrule.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_indent.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_indent_remove.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_italic.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_list_bullets.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_list_numbers.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_strikethrough.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_underline.png" />
+    <Content Include="Content\structure\images\igLoadingSmall.gif" />
+    <Content Include="Content\structure\images\igPivot\dataselector-sprite.png" />
+    <Content Include="Content\structure\images\igPivot\kpi-icons.png" />
+    <Content Include="Content\structure\images\igPivot\pivot-header-icons.png" />
+    <Content Include="Content\structure\images\igPopover\igPopoverArrowBottom.png" />
+    <Content Include="Content\structure\images\igPopover\igPopoverArrowLeft.png" />
+    <Content Include="Content\structure\images\igPopover\igPopoverArrowRight.png" />
+    <Content Include="Content\structure\images\igPopover\igPopoverArrows.png" />
+    <Content Include="Content\structure\images\igPopover\igPopoverArrowTop.png" />
+    <Content Include="Content\structure\images\igRating\ig-rating-touch%402.png" />
+    <Content Include="Content\structure\images\igRating\ig-rating-touch.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igBigPauseButton.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igBigPlayButton.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igLoadingSmall.gif" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton24.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton32.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton48.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igVPBackground.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igVPBookmarkSprite.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igWarningIcon.png" />
+    <Content Include="Content\structure\images\trial.png" />
+    <Content Include="Content\structure\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\structure\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\structure\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\structure\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\structure\infragistics.css" />
+    <Content Include="Content\themes\infragistics\images\datepicker.gif" />
+    <Content Include="Content\themes\infragistics\images\gradient_1.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_2.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_3.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_4.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_5.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_6.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_7.png" />
+    <Content Include="Content\themes\infragistics\images\icon_sprite.png" />
+    <Content Include="Content\themes\infragistics\images\igRating\ig-rating.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVideoPlayerIcons.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVPBackground.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVPBookmarkSprite.png" />
+    <Content Include="Content\themes\infragistics\images\progress_bar.gif" />
+    <Content Include="Content\themes\infragistics\images\slider_handles.png" />
+    <Content Include="Content\themes\infragistics\images\slider_h_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\slider_v_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\tab_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\trial.png" />
+    <Content Include="Content\themes\infragistics\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\infragistics\infragistics.theme.css" />
+    <Content Include="Content\themes\infragistics\infragistics.theme.min.css">
+      <DependentUpon>infragistics.theme.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\themes\infragistics\infragistics.theme.less" />
+    <Content Include="img\android-logo.png" />
+    <Content Include="img\aspnet-logo.png" />
+    <Content Include="img\favicon-ignite.ico" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\igniteui-trans.png" />
+    <Content Include="img\infragistics.PNG" />
+    <Content Include="img\ios-logo.png" />
+    <Content Include="img\jsfiddle-img.png" />
+    <Content Include="img\loader.gif" />
+    <Content Include="img\OtherIcons-lowres.png" />
+    <Content Include="img\OtherIcons.png" />
+    <Content Include="img\reportplus-logo.jpg" />
+    <Content Include="img\reportplus-logo.png" />
+    <Content Include="img\SB-icons-lowres-small.png" />
+    <Content Include="img\SB-icons-lowres.png" />
+    <Content Include="img\SB-icons.png" />
+    <Content Include="img\top-button.png" />
+    <Content Include="img\winforms-logo.png" />
+    <Content Include="img\winformstestautomationhp-logo.png" />
+    <Content Include="img\winformstestautomationibm-logo.png" />
+    <Content Include="img\wpf-logo.png" />
+    <Content Include="img\wpftestautomationhp-logo.png" />
+    <Content Include="img\xamarin-logo.png" />
+    <Content Include="Scripts\app\igviewer.redirects.js" />
+    <Content Include="Scripts\app\igviewer.common.js" />
+    <Content Include="Scripts\app\igviewer.contentService.js" />
+    <Content Include="Scripts\app\igviewer.feedbackService.js" />
+    <Content Include="Scripts\app\igviewer.locale.js" />
+    <Content Include="Scripts\app\igviewer.searchFeature.js" />
+    <Content Include="Scripts\app\igviewer.searchService.js" />
+    <Content Include="Scripts\app\igviewer.tree.js" />
+    <Content Include="Scripts\app\igviewer.versionSelector.js" />
+    <Content Include="Scripts\app\staging.ignite.apiLinkFilter.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\extensions\infragistics.datasource.knockoutjs.js" />
+    <Content Include="Scripts\extensions\infragistics.ui.combo.knockout-extensions.js" />
+    <Content Include="Scripts\extensions\infragistics.ui.datachart.knockout-extensions.js" />
+    <Content Include="Scripts\extensions\infragistics.ui.editors.knockout-extensions.js" />
+    <Content Include="Scripts\extensions\infragistics.ui.grid.knockout-extensions.js" />
+    <Content Include="Scripts\extensions\infragistics.ui.tree.knockout-extensions.js" />
+    <Content Include="Scripts\fastclick.min.js" />
+    <Content Include="Scripts\highlight.pack.js" />
+    <Content Include="Scripts\i18n\infragistics-bg.js" />
+    <Content Include="Scripts\i18n\infragistics-de.js" />
+    <Content Include="Scripts\i18n\infragistics-es.js" />
+    <Content Include="Scripts\i18n\infragistics-fr.js" />
+    <Content Include="Scripts\i18n\infragistics-ja.js" />
+    <Content Include="Scripts\i18n\infragistics-ru.js" />
+    <Content Include="Scripts\i18n\infragistics.ui.combo-ja.js" />
+    <Content Include="Scripts\i18n\jquery.gh-embed-ja.js" />
+    <Content Include="Scripts\infragistics.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.map" />
+    <Content Include="Scripts\app\igviewer.renderingService.js" />
+    <Content Include="Content\_defaults-and-helpers.scss" />
+    <Content Include="Content\_legacy.scss" />
+    <Content Include="Content\igniteui.scss" />
+    <EmbeddedResource Include="Resources\Android.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Android.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Android.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Android.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusAndroid.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusAndroid.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusAndroid.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusAndroid.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reveal.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reveal.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reveal.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reveal.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SharePlusAndroid.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharePlusAndroid.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SharePlusAndroid.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharePlusAndroid.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SharePlusIOS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharePlusIOS.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SharePlusIOS.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharePlusIOS.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Slingshot.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Slingshot.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Slingshot.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Slingshot.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusWeb.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusWeb.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusWeb.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusWeb.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusIOS.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusIOS.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusIOS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusIOS.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinFormsTAIBM.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormsTAIBM.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinUniversal.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinUniversal.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinFormsTAHP.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormsTAHP.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinFormsTAHP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormsTAHP.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinUniversal.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinUniversal.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WPFTAHP.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WPFTAHP.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WPFTAHP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WPFTAHP.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Xamarin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Xamarin.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Xamarin.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Xamarin.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\iOS.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>iOS.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\iOS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>iOS.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusDesktop.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusDesktop.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ReportPlusDesktop.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportPlusDesktop.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reporting.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reporting.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reporting.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reporting.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WPF.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WPF.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WPF.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WPF.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinForms.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinForms.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinForms.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinForms.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ASPNET.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ASPNET.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ASPNET.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ASPNET.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\IgniteUI.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IgniteUI.ja.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\IgniteUI.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IgniteUI.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Main.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.ja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="robots._txt" />
+    <Content Include="Content\igniteui.css.map">
+      <DependentUpon>igniteui.css</DependentUpon>
+    </Content>
+    <Content Include="Content\multiplatform.scss" />
+    <EmbeddedResource Include="Resources\WinFormsTAIBM.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormsTAIBM.ja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="Content\structure\fonts\icomoon.eot" />
+    <Content Include="Content\structure\fonts\icomoon.ttf" />
+    <Content Include="Content\structure\fonts\icomoon.woff" />
+    <Content Include="Content\structure\fonts\jquery-ui.eot" />
+    <Content Include="Content\structure\fonts\jquery-ui.ttf" />
+    <Content Include="Content\structure\fonts\jquery-ui.woff" />
+    <Content Include="Content\_asciidoc.scss" />
+    <Content Include="Content\_highlight.scss" />
+    <Content Include="Content\_site.scss" />
+    <Content Include="Content\_media-queries.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\_sec-header.scss" />
+    <Content Include="Content\jquery.gh-embed.scss" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.gh-embed.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <Content Include="Views\Errors\404.aspx" />
+    <Content Include="Views\Errors\Error.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Topics\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_plain.cshtml" />
+    <Content Include="Views\RequestError\NotFound.cshtml" />
+    <Content Include="Views\RequestError\ServerError.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\RequestError\TopicVersionNotFound.cshtml" />
+    <Content Include="Views\Shared\multiplatform.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_HeaderSecIgnite.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_HeaderStyles.cshtml" />
+    <Content Include="Views\Shared\_HeaderSecondary.cshtml" />
+    <Content Include="Views\Shared\_HeaderSecReveal.cshtml" />
+    <Content Include="Views\Shared\_FooterReveal.cshtml" />
+    <Content Include="Views\Shared\_HeaderReveal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\layouts\" />
+    <Folder Include="help\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tripwire.Domain\Tripwire.Domain.csproj">
+      <Project>{05a057ef-f9b5-4267-bfdf-f96b9419ef44}</Project>
+      <Name>Tripwire.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Main.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;BETA</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9233</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9233/help/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

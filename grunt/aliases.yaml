@@ -1,0 +1,46 @@
+# https://github.com/gruntjs/grunt-contrib-copy
+# https://github.com/gruntjs/grunt-contrib-clean
+# https://github.com/bylexus/grunt-md2html
+
+default:
+- 'clean:offline'           # deletes all previously generated files
+- 'clean:online'            # deletes all previously generated files
+
+- 'toc:offline'             # generates the table of contents based off the file system
+- 'toc:online'              # generates the table of contents based off the file system
+
+- 'contentCopier'           # copies *.md files from the source folder without directories
+
+- 'replaceVariables'		# replaces %% variables with configuration values
+
+- 'markdown:offline'        # generates HTML content pages from the markdown files
+- 'offlineCleanup'
+- 'markdown:online'         # generates HTML content pages from the markdown files
+
+- 'imagesCopier:offline'    # images to destination folders
+- 'imagesCopier:online'     # images to destination folders
+
+- 'solrIndex'				# indexes produced files content and sends it to the search engine
+
+- 'offlineResources'		# copies/generates offline viewer resources
+
+offline:
+- 'clean:offline'           # deletes all previously generated files
+- 'toc:offline'             # generates the table of contents based off the file system
+- 'contentCopier'           # copies *.md files from the source folder without directories
+- 'replaceVariables'		# replaces %% variables with configuration values
+- 'markdown:offline'        # generates HTML content pages from the markdown files
+- 'imagesCopier:offline'    # images to destination folders
+- 'offlineResources'		# copies/generates offline viewer resources
+
+online:
+- 'clean:online'            # deletes all previously generated files
+- 'toc:online'              # generates the table of contents based off the file system
+- 'contentCopier'           # copies *.md files from the source folder without directories
+- 'replaceVariables'		# replaces %% variables with configuration values
+- 'markdown:online'         # generates HTML content pages from the markdown files
+- 'imagesCopier:online'     # images to destination folders
+- 'solrIndex'				# indexes produced files content and sends it to the search engine
+
+index:
+- 'solrIndex'

@@ -1,0 +1,21 @@
+﻿@{
+	string main = System.Configuration.ConfigurationManager.AppSettings["IGRootUrl"];
+}
+
+<div id="headerSecondary" class="igw-main-header">
+	<section class="igw-main-nav igw-wrapper" id="menu-cente">
+		<div class="igw-main-navbar clearfix">
+			<h3 class="special-for-controls">
+				<a class="headerIcon_click" href="@main@ViewBag.MainSite_ProductPath">@ViewBag.ProductFamilyName</a>
+				<span>| @Resources.Main.Help_Topics</span>
+			</h3>
+			<nav class="igw-nav-wrapper">
+				<ul class="igw-header-nav">
+					<li>
+						<a class="igw-mobile-hidden igw-header-btn igw-btn" href="@main@ViewBag.MainSite_DownloadPath"><span>@Resources.Main.Download_Trial</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</div>
