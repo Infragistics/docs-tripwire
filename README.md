@@ -1,17 +1,20 @@
+<div style="display: flex; flex-flow: row; margin-bottom: 1rem; font-family: 'Titillium Web'">
+    <img style="border-radius: 0.25rem; align-self: center; justify-content: left; " alt="Infragistics" src="https://www.infragistics.com/media/441501/horz_logo.png"/>
+    <div style="display: flex; flex-flow: row; justify-content: center; margin-left: 1rem;
+    align-items: center; font-family: 'Arial'; font-size: 24pt">Tripwire</div>
+</div>
 
-## Docs Tripwire
-Tripwire is both the help viewer shell for online and offline Ignite UI
-help as well as the home of the Grunt file build tasks to generate the
-help.
+# Docs Tripwire
 
-## Topics Ported from IG DevOps Repository
-https://infragistics.visualstudio.com/NetAdvantage/_git/tripwire
+Tripwire is both the help viewer shell for online and offline help documentation as well as the home of the Grunt file build tasks to generate the help.
 
 
 ## Related Documents
+
 - [The Build Process](docs/the-build-process.md)
 
 ## Overview
+
 Tripwire works in conjunction with the [Ignite UI help topics repository](https://github.com/IgniteUI/help-topics),
 which is the home for the help content documents. In order to get the
 two repositories to work together there are a few setup steps which are
@@ -40,6 +43,7 @@ To generate the help run one of the following:
 > **Note:** Platform/version configuration is done through parameters listed below. You can also pass a `--file` option as well to [Build a single file](#single-file) section.
 
 #### Parameters
+
 Some task options are [templated](http://gruntjs.com/configuring-tasks#templates) with global variables and also loadfiles from the `/config` folder all based on parameters. The available command line options are:
 
 Option | Type |Description | Default
@@ -70,7 +74,7 @@ There are two configured [grunt watch](https://github.com/gruntjs/grunt-contrib-
 
 -----------------------------
 
-### <a id="dynamic-link-directory"></a> Creating a Dynamic-Linked Directory
+### Creating a Dynamic-Linked Directory
 In order to make the Markdown files that are in the help topics repository easily available to the Tripwire build files you must create a [dynamic-linked directory](http://technet.microsoft.com/en-us/library/cc753194.aspx) which effectively creates a folder alias from the Tripwire root to the `topics` folder in the `help-topics` repository.
 
 The following image shows you how the `topics` folder under the `tripwire` repository is just a pointer to the `topics` folder in the `help-topics` repository
@@ -124,8 +128,14 @@ This will take your source file thought the process and produce html for the bui
 
 
 #### Full rebuild for file with `--full`
+
 Setting the `--full` flag will also allow tasks to cleanup old versions of the file and generate new Table of Contents. Example:
 
 	grunt offline --file=00_igCombo_Data_Binding.md --full	
 
 Copying specific to the topic images along is TBD.
+
+
+## Tripwire Ported from IG DevOps Repository
+
+https://infragistics.visualstudio.com/NetAdvantage/_git/tripwire
