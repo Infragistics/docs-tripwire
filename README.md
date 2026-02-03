@@ -1,12 +1,14 @@
-<div style="display: flex; flex-flow: row; margin-bottom: 1rem; font-family: 'Titillium Web'">
+<!-- <div style="display: flex; flex-flow: row; margin-bottom: 1rem; font-family: 'Titillium Web'">
     <img style="border-radius: 0.25rem; align-self: center; justify-content: left; " alt="Infragistics" src="https://www.infragistics.com/media/441501/horz_logo.png"/>
     <div style="display: flex; flex-flow: row; justify-content: center; margin-left: 1rem;
     align-items: center; font-family: 'Arial'; font-size: 24pt">Tripwire</div>
-</div>
+</div> -->
 
-# Docs Tripwire
+![Infragistics repository title](./ig-title.svg)
 
-Tripwire is both the help viewer shell for online and offline help documentation as well as the home of the Grunt file build tasks to generate the help.
+# Infragistics Tripwire Docs
+
+Infragistics Tripwire is both the help viewer shell for online and offline help documentation as well as the home of the Grunt file build tasks to generate the help.
 
 
 ## Related Documents
@@ -46,8 +48,8 @@ To generate the help run one of the following:
 
 Some task options are [templated](http://gruntjs.com/configuring-tasks#templates) with global variables and also loadfiles from the `/config` folder all based on parameters. The available command line options are:
 
-Option | Type |Description | Default
---- | --- | --- | ---
+Option   | Type | Description | Default
+-------- | ---- | ----------- | --------
 `--major` | string | The major release version available throughout the configuration as `<%= major %>` | 15
 `--minor` | string | Minor release version | 1
 `--platform` | string | Documentation platform | jquery
@@ -135,7 +137,7 @@ Setting the `--full` flag will also allow tasks to cleanup old versions of the f
 
 Copying specific to the topic images along is TBD.
 
-
+<!-- 
 ## Tripwire Ported from IG DevOps Repository
 
-https://infragistics.visualstudio.com/NetAdvantage/_git/tripwire
+https://infragistics.visualstudio.com/NetAdvantage/_git/tripwire -->
